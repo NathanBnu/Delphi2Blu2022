@@ -1,0 +1,47 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.Imaging.pngimage,
+  Vcl.ExtCtrls;
+
+type
+  TForm1 = class(TForm)
+    edtPrimeiroNumero: TEdit;
+    Label2: TLabel;
+    edtSegundoNumero: TEdit;
+    btnSomar: TButton;
+    Label3: TLabel;
+    edtSoma: TEdit;
+    Label1: TLabel;
+    ImgSomar: TImage;
+    imgIgual: TImage;
+    imgQuadro: TImage;
+    procedure btnSomarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm1.btnSomarClick(Sender: TObject);
+var
+xValor1, xValor2, xSoma: Integer;
+begin
+  xValor1 := StrToInt(edtPrimeiroNumero.Text);
+  xValor2 := StrToInt(edtSegundoNumero.Text);
+  xSoma := xValor1 + xValor2;
+
+  edtSoma.Text := IntToStr(xSoma);
+end;
+
+end.
