@@ -2,8 +2,8 @@ object frmPrincipal: TfrmPrincipal
   Left = 0
   Top = 0
   Caption = 'Principal'
-  ClientHeight = 399
-  ClientWidth = 275
+  ClientHeight = 439
+  ClientWidth = 272
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,7 +16,7 @@ object frmPrincipal: TfrmPrincipal
   object Label1: TLabel
     Left = 0
     Top = 0
-    Width = 275
+    Width = 272
     Height = 25
     Align = alTop
     Alignment = taCenter
@@ -36,6 +36,13 @@ object frmPrincipal: TfrmPrincipal
     Height = 13
     Caption = 'Digite o valor '
   end
+  object Label3: TLabel
+    Left = 24
+    Top = 99
+    Width = 83
+    Height = 13
+    Caption = 'Digite o desconto'
+  end
   object edtEntrada: TEdit
     Left = 120
     Top = 53
@@ -46,19 +53,20 @@ object frmPrincipal: TfrmPrincipal
   end
   object rgOpcoes: TRadioGroup
     Left = 24
-    Top = 96
+    Top = 136
     Width = 217
     Height = 105
     Caption = 'Op'#231#245'es de cliente'
     Items.Strings = (
       'Resid'#234'ncial'
       'Comercial'
-      'Industrial')
+      'Industrial'
+      'Fazenda')
     TabOrder = 1
   end
   object btnCalcular: TButton
     Left = 166
-    Top = 224
+    Top = 264
     Width = 75
     Height = 25
     Caption = 'Calcular'
@@ -67,9 +75,17 @@ object frmPrincipal: TfrmPrincipal
   end
   object mmResultado: TMemo
     Left = 24
-    Top = 271
+    Top = 305
     Width = 217
     Height = 114
     TabOrder = 3
+  end
+  object edtDesconto: TEdit
+    Left = 120
+    Top = 96
+    Width = 121
+    Height = 21
+    TabOrder = 4
+    TextHint = 'R$'
   end
 end

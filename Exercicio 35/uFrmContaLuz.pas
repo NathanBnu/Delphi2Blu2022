@@ -7,7 +7,7 @@ uses
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ExtCtrls;
 
 type
-  TOpcao = (tpResidencial, tpComercial, tpIndustrial);
+  TOpcao = (tpResidencial, tpComercial, tpIndustrial, tpFazenda);
   TfrmPrincipal = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
@@ -15,6 +15,8 @@ type
     rgOpcoes: TRadioGroup;
     btnCalcular: TButton;
     mmResultado: TMemo;
+    edtDesconto: TEdit;
+    Label3: TLabel;
     procedure btnCalcularClick(Sender: TObject);
   private
     procedure Calculo;
@@ -36,8 +38,9 @@ end;
 
 procedure TfrmPrincipal.Calculo;
 var
-  xEntrada, xConta: Double;
+  xDesconto, xEntrada, xConta: Double;
 begin
+  xDesconto := StrToFloat(edtDesconto.Text); //Pegando o valor do desconto
 
   if TryStrToFloat(edtEntrada.Text, xEntrada) then;
   begin
@@ -47,19 +50,29 @@ begin
       tpResidencial:
       begin
         xConta := xEntrada * 0.6;
-        mmResultado.Lines.Add('Valor residencial a pagar: R$' + FormatFloat('#,##0.00', xConta));
-      end;
+        mmResultado.Lines.Add('Valor residencial a pagar: R$' +
+                              FormatFloat('#,##0.00', (xConta - xDesconto)));
+      end;                                            //Aplicando o desconto
 
       tpComercial:
       begin
         xConta := xEntrada * 0.48;
-        mmResultado.Lines.Add('Valor comercial a pagar: R$' + FormatFloat('#,##0.00', xConta));
+        mmResultado.Lines.Add('Valor comercial a pagar: R$' +
+                              FormatFloat('#,##0.00', (xConta - xDesconto)));
       end;
 
       tpIndustrial:
       begin
         xConta := xEntrada * 1.29;
-        mmResultado.Lines.Add('Valor industrial a pagar: R$' + FormatFloat('#,##0.00', xConta));
+        mmResultado.Lines.Add('Valor industrial a pagar: R$' +
+                              FormatFloat('#,##0.00', (xConta - xDesconto)));
+      end;
+
+      tpFazenda:
+      begin
+        xConta := xEntrada * 2.18;
+        mmResultado.Lines.Add('Valor rural a pagar: R$' +
+                              FormatFloat('#,##0.00', (xConta - xDesconto)));
       end;
 
       else
