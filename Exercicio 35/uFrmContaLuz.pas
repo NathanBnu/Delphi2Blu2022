@@ -71,7 +71,7 @@ begin
       tpFazenda:
       begin
         xConta := xEntrada * 2.18;
-        mmResultado.Lines.Add('Valor industrial a pagar: R$' +
+        mmResultado.Lines.Add('Valor rural a pagar: R$' +
                               FormatFloat('#,##0.00', (xConta - xDesconto)));
       end;
 
