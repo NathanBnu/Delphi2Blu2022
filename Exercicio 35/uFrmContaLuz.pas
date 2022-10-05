@@ -40,43 +40,41 @@ procedure TfrmPrincipal.Calculo;
 var
   xDesconto, xEntrada, xConta: Double;
 begin
-  xDesconto := StrToFloat(edtDesconto.Text); //Pegando o valor do desconto
-
-  if TryStrToFloat(edtEntrada.Text, xEntrada) then;
+  if (TryStrToFloat(edtEntrada.Text, xEntrada)) and (TryStrToFloat(edtDesconto.Text, xDesconto)) then;
   begin
 
     case TOpcao(rgOpcoes.ItemIndex) of
 
       tpResidencial:
       begin
-        xConta := xEntrada * 0.6;
+        xConta := xEntrada * 0.8;
         mmResultado.Lines.Add('Valor residencial a pagar: R$' +
                               FormatFloat('#,##0.00', (xConta - xDesconto)));
       end;                                            //Aplicando o desconto
 
       tpComercial:
       begin
-        xConta := xEntrada * 0.48;
+        xConta := xEntrada * 0.68;
         mmResultado.Lines.Add('Valor comercial a pagar: R$' +
                               FormatFloat('#,##0.00', (xConta - xDesconto)));
       end;
 
       tpIndustrial:
       begin
-        xConta := xEntrada * 1.29;
+        xConta := xEntrada * 1.49;
         mmResultado.Lines.Add('Valor industrial a pagar: R$' +
                               FormatFloat('#,##0.00', (xConta - xDesconto)));
       end;
 
       tpFazenda:
       begin
-        xConta := xEntrada * 2.18;
+        xConta := xEntrada * 3.18;
         mmResultado.Lines.Add('Valor rural a pagar: R$' +
                               FormatFloat('#,##0.00', (xConta - xDesconto)));
       end;
 
       else
-        Showmessage('Digite um número!');
+        Showmessage('Digite os 2 valores!');
     end;
   end;
 
