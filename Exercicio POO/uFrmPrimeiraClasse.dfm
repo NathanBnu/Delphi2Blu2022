@@ -214,5 +214,6 @@ object frmPrimeiraClasse: TfrmPrimeiraClasse
     Height = 25
     Caption = 'Calcular OOP'
     TabOrder = 7
+    OnClick = btnCalcularOOPClick
   end
 end
