@@ -2,7 +2,8 @@ program AreaTriangulo;
 
 uses
   Vcl.Forms,
-  uFrmPrimeiraClasse in 'uFrmPrimeiraClasse.pas' {frmPrimeiraClasse};
+  uFrmPrimeiraClasse in 'uFrmPrimeiraClasse.pas' {frmPrimeiraClasse},
+  uTriangulo in 'uTriangulo.pas';
 
 {$R *.res}
 
