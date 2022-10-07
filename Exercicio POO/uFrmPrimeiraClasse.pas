@@ -105,6 +105,8 @@ begin
     xTrianguloX.b := StrToFloatDef(edtBX.Text, 0);
     xTrianguloX.c := StrToFloatDef(edtCX.Text, 0);
 
+    //xTtianguloX.D := 10; Não e possivel pegar dados somente leitura
+
     xAreaX := xTrianguloX.Area;
 
     //Segundo TRIANGULO
