@@ -19,7 +19,8 @@ type
       procedure SetDataNascimento(const Value: TDate);
     
     public
-  
+      //function Idade: TDate; 
+      
       property Nome: String read GetNome write SetNome;
       property DataNascimento: TDate read GetDataNascimento write SetDataNascimento;
       property Altura: Double read GetAltura write SetAltura;
@@ -44,6 +45,12 @@ function TPessoa.GetNome: String;
 begin
   Result := FNome;
 end;
+
+{function TPessoa.Idade: TDate;
+var
+begin
+//Calcular idade atual com base no nascimento.
+end;  }
 
 procedure TPessoa.SetAltura(const Value: Double);
 begin

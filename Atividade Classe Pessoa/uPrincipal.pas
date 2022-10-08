@@ -22,7 +22,6 @@ type
   private
     procedure Cadastrar;
   public
-    { Public declarations }
   end;
 
 var

@@ -2,8 +2,7 @@ program ClassePessoa;
 
 uses
   Vcl.Forms,
-  uPrincipal in 'uPrincipal.pas' {Form1},
-  uPessoa in 'uPessoa.pas';
+  uPrincipal in 'uPrincipal.pas' {Form1};
 
 {$R *.res}
 
