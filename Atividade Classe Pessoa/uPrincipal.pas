@@ -43,28 +43,23 @@ end;
 
 procedure TForm1.Cadastrar;
 var
-  xNome: TPessoa;
-  xDataNascimento: TPessoa;
-  xAltura: TPessoa;
+  xPessoa: TPessoa;
 
 begin
-  xNome := TPessoa.Create;
-  xDataNascimento := TPessoa.Create;
-  xAltura := TPessoa.Create;
+  xPessoa := TPessoa.Create;
 
   try
-    xNome.Nome := edtNome.Text;
-    xDataNascimento.DataNascimento := StrToDateTime(edtDataNascimento.Text);
-    xAltura.Altura := StrToFloat(edtAltura.Text);
+    xPessoa.Nome := edtNome.Text;
+    xPessoa.DataNascimento := StrToDateTime(edtDataNascimento.Text);
+    xPessoa.Altura := StrToFloat(edtAltura.Text);
 
-    mmImprimir.Lines.Add('Nome cadastrado: ' + xNome.Nome);
-    mmImprimir.Lines.Add('Sua data de nascimento: ' + DateTimeToStr(xDataNascimento.DataNascimento));
-    mmImprimir.Lines.Add('Sua altura: ' + FloatToStr(xAltura.altura) + #13#10);
+    mmImprimir.Lines.Add('Nome cadastrado: ' + xPessoa.Nome);
+    mmImprimir.Lines.Add('Sua data de nascimento: ' + DateTimeToStr(xPessoa.DataNascimento));
+    mmImprimir.Lines.Add('Sua altura: ' + FloatToStr(xPessoa.altura));
+    mmImprimir.Lines.Add('Idade atual: ' + FloatToStr(trunc((date - xPessoa.DataNascimento) / 365.25)));
 
   finally
-    FreeAndNil(xNome);
-    FreeAndNil(xDataNascimento);
-    FreeAndNil(xAltura);
+    FreeAndNil(xPessoa);
   end;
 
 end;

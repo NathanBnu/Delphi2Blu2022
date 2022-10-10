@@ -87,6 +87,7 @@ object Form1: TForm1
     Width = 121
     Height = 21
     TabOrder = 0
+    Text = 'Nathan'
     TextHint = 'Nome'
   end
   object edtDataNascimento: TEdit
@@ -95,6 +96,7 @@ object Form1: TForm1
     Width = 121
     Height = 21
     TabOrder = 1
+    Text = '15/04/2002'
     TextHint = 'dd/mm/aa'
   end
   object edtAltura: TEdit
@@ -103,6 +105,7 @@ object Form1: TForm1
     Width = 121
     Height = 21
     TabOrder = 2
+    Text = '1,71'
     TextHint = 'Altura'
   end
   object btnCadastrar: TButton
