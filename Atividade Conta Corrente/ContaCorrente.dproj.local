@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 19:24:20.000.960,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 18:21:56.000.525,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/10 20:15:41.352,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/10 20:15:47.642,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/10/10 20:16:37.040,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\uFrmPrincipal.pas=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/10 20:16:37.040,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\uFrmPrincipal.dfm=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/10 20:16:41.904,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\ContaCorrente.dproj=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2022/10/10 20:16:46.141,=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\Unit2.pas</Transaction>
+    <Transaction>2022/10/10 20:16:59.742,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\uContaCorrente.pas=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\Unit2.pas</Transaction>
+    <Transaction>2022/10/10 20:16:59.742,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\uContaCorrente.dfm=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\Unit2.dfm</Transaction>
+    <Transaction>2022/10/10 20:17:34.300,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\uContaCorrente.pas=</Transaction>
+    <Transaction>2022/10/10 20:17:40.394,=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\Unit1.pas</Transaction>
+    <Transaction>2022/10/10 20:18:05.898,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\UContaCorrente.pas=C:\Users\nagoncalves\Documents\Delphi2Blu2022\Atividade Conta Corrente\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>

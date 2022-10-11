@@ -1,7 +1,7 @@
 unit uPessoa;
 
 interface
-
+  //SYSTEM.SISUTILS;
 type
 
   TPessoa = class
@@ -9,7 +9,7 @@ type
       Fnome: String;
       FDataNascimento: TDate;
       FAltura: Double;
-      FIdade: Double;
+
 
       function GetNome: String;
       function GetDataNascimento: TDate;
@@ -20,12 +20,12 @@ type
       procedure SetDataNascimento(const Value: TDate);
     
     public
-
+      //function RetornarIdade: Double;
       property Nome: String read GetNome write SetNome;
       property DataNascimento: TDate read GetDataNascimento write SetDataNascimento;
       property Altura: Double read GetAltura write SetAltura;
   end;
-  
+
 
 implementation
 
@@ -45,6 +45,11 @@ function TPessoa.GetNome: String;
 begin
   Result := FNome;
 end;
+
+{function TPessoa.RetornarIdade: Double;
+begin
+  Result := (Date - FDataNascimento) / 365.25;
+end;  }
 
 procedure TPessoa.SetAltura(const Value: Double);
 begin
