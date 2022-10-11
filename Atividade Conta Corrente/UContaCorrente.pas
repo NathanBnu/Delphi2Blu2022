@@ -18,9 +18,13 @@ type
       procedure SetSaldo(const Value: Double);
 
     public
-      procedure alterarNome;
-      function Deposito: Double;
-      function Saque: Double;
+      Constructor Create(const aNumeroConta: Integer;
+                         const aNomeCorretista: String;
+                         const aSaldo: Double = 0);
+
+      procedure AlterarNome;
+      procedure Depositar;
+      procedure Sacar;
 
       property NumeroConta: Integer read GetNumeroConta write SetNumeroConta;
       property NomeCorretista: String read GetNomeCorretista write SetNomeCorretista;
@@ -29,17 +33,41 @@ type
 
 implementation
 
+uses
+  Vcl.Dialogs, System.SysUtils;
+
 { TContaCorrente }
 
-//EDITAR
+//Metodo Alterar o nome
 procedure TContaCorrente.alterarNome;
 begin
-  NomeCorretista := 'fgdsgfd';
+  NomeCorretista := InputBox('Alterar nome', 'Alterar nome', '');
 end;
 
-function TContaCorrente.Deposito: Double;
+//Metodo depositar
+constructor TContaCorrente.Create(const aNumeroConta: Integer;
+  const aNomeCorretista: String; const aSaldo: Double);
 begin
+  FNumeroConta := aNumeroConta;
+  FnomeCorretista := aNomeCorretista;
+  FSaldo := aSaldo;
+end;
 
+procedure TContaCorrente.Depositar;
+var
+  xDeposito: Double;
+begin
+  xDeposito := StrToFloat(inputbox('Insira o deposito','Insira o deposito', '0'));
+  Saldo := Saldo + xDeposito;
+end;
+
+//Metodo sacar
+procedure TContaCorrente.Sacar;
+var
+  xSacar: Double;
+begin
+  xSacar := StrToFloat(inputbox('Sacar','Insira o valor a ser sacado', ''));
+  Saldo := Saldo - xSacar;
 end;
 
 function TContaCorrente.GetNomeCorretista: String;
@@ -55,11 +83,6 @@ end;
 function TContaCorrente.GetSaldo: Double;
 begin
   Result := FSaldo;
-end;
-
-function TContaCorrente.Saque: Double;
-begin
-
 end;
 
 procedure TContaCorrente.SetNomeCorretista(const Value: String);

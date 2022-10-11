@@ -2,7 +2,7 @@ program ContaCorrente;
 
 uses
   Vcl.Forms,
-  uFrmPrincipal in 'uFrmPrincipal.pas' {Form1},
+  uFrmPrincipal in 'uFrmPrincipal.pas' {frmPrincipal},
   UContaCorrente in 'UContaCorrente.pas';
 
 {$R *.res}
@@ -10,6 +10,6 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
-  Application.CreateForm(TForm1, Form1);
+  Application.CreateForm(TfrmPrincipal, frmPrincipal);
   Application.Run;
 end.
