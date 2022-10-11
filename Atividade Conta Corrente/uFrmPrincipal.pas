@@ -9,17 +9,19 @@ uses
 type
   TfrmPrincipal = class(TForm)
     btnComecar: TButton;
-    lblNome: TLabel;
     lblSaldo: TLabel;
     btnAlterarNome: TButton;
     btnDepositar: TButton;
     btnSacar: TButton;
+    lblNome: TLabel;
     procedure btnComecarClick(Sender: TObject);
-    //procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure btnAlterarNomeClick(Sender: TObject);
+    procedure btnDepositarClick(Sender: TObject);
+    procedure btnSacarClick(Sender: TObject);
   private
     FContaCorrente: TContaCorrente;
-    procedure comecar;
+    procedure Comecar;
   public
     { Public declarations }
   end;
@@ -34,24 +36,51 @@ implementation
 
 { TfrmPrincipal }
 
+//Alterar Nome
+procedure TfrmPrincipal.btnAlterarNomeClick(Sender: TObject);
+begin
+  FContaCorrente.AlterarNome;
+  lblNome.Caption := 'Nome: ' + FContaCorrente.NomeCorretista;
+end;
+
+//Botão para começar
 procedure TfrmPrincipal.btnComecarClick(Sender: TObject);
 begin
-  Comecar
+  Comecar;
+  btnAlterarNome.Visible := True;
+  btnSacar.Visible := True;
+  btnDepositar.Visible := True;
+end;
+
+//Depositar dinheiro
+procedure TfrmPrincipal.btnDepositarClick(Sender: TObject);
+begin
+  FContaCorrente.Depositar;
+  lblSaldo.Caption := 'Saldo: R$' + FContaCorrente.Saldo.ToString;
+end;
+
+//Sacar dinheiro
+procedure TfrmPrincipal.btnSacarClick(Sender: TObject);
+begin
+  FContaCorrente.Sacar;
+  lblSaldo.Caption := 'Saldo: R$' + FContaCorrente.Saldo.ToString;
 end;
 
 //Cadastrar dados
 procedure TfrmPrincipal.comecar;
 var
-  xContaCorrente: TContaCorrente;
+  xNumeroConta: Integer;
+  xNomeCorretista: String;
+  xSaldo: Double;
 begin
-  FContaCorrente := TContaCorrente.Create;
+  xNumeroConta := StrToInt(InputBox('Numero da conta', 'Numero da conta', ''));
+  xNomeCorretista := InputBox('Nome do corretista', 'Nome do corretista', '');
+  xSaldo := StrToFloat(InputBox('Saldo','Saldo', '0'));
 
-  xContaCorrente.NumeroConta := StrToInt(InputBox('Numero da conta', 'Numero da conta', ''));
-  xContaCorrente.NomeCorretista := InputBox('Nome do corretista', 'Nome do corretista', '');
-  xContaCorrente.Saldo := StrToFloat(InputBox('Saldo','Saldo', '0'));
+  FContaCorrente := TContaCorrente.Create(xNumeroConta, xNomeCorretista, xSaldo);
 
-  lblNome.Caption := 'Nome: ' + xContaCorrente.NomeCorretista;
-  lblSaldo.Caption := 'Saldo: R$' + FloatToStr(xContaCorrente.Saldo);
+  lblNome.Caption := 'Nome: ' + fContaCorrente.NomeCorretista;
+  lblSaldo.Caption := 'Saldo: R$' + FloatToStr(fContaCorrente.Saldo);
 end;
 
 //Destruir
