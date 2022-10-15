@@ -2,6 +2,9 @@ unit UClasses;
 
 interface
 
+uses
+  ValidaCPF, ValidaCNPJ;
+
 type
   TPessoa = class
   private
@@ -15,7 +18,7 @@ type
     procedure SetEndereco(const Value: String);
 
   public
-    Procedure Gravar;
+    Procedure Gravar(aPessoa: TPessoa); virtual; abstract;
     property Nome: String read GetNome write SetNome;
     property Endereco: String read GetEndereco write SetEndereco;
   end;
@@ -32,7 +35,8 @@ type
     procedure SetIdade(const Value: Byte);
 
   public
-    procedure CPF_Valido;
+    //function Gravar(aPessoa: TPessoa): String; override;
+    Function CPF_Valido(CPF: String): Boolean;
     property CPF: String read GetCPF write SetCPF;
     property Idade: Byte read GetIdade write SetIdade;
   end;
@@ -43,18 +47,21 @@ type
     FIE: String;
 
     function GetCNPJ: String;
-    function GetFIE: String;
+    function GetIE: String;
 
     procedure SetCNPJ(const Value: String);
-    procedure SetFIE(const Value: String);
+    procedure SetIE(const Value: String);
 
   public
-    procedure CNPJ_Valido;
+    function CNPJ_Valido(CNPJ: String): Boolean;
     property CNPJ: String read GetCNPJ write SetCNPJ;
-    property IE: String read GetFIE write SetFIE;
+    property IE: String read GetIE write SetIE;
   end;
 
 implementation
+
+uses
+  Vcl.Dialogs;
 
 
 { TPessoa }
@@ -69,10 +76,6 @@ begin
   Result := FNome;
 end;
 
-procedure TPessoa.Gravar;
-begin
-
-end;
 
 procedure TPessoa.SetEndereco(const Value: String);
 begin
@@ -81,14 +84,14 @@ end;
 
 procedure TPessoa.SetNome(const Value: String);
 begin
-  FEndereco := Value;
+  FNome := Value;
 end;
 
 { TPessoaJuridica }
 
-procedure TPessoaFisica.CPF_Valido;
+function TPessoaFisica.CPF_Valido(CPF: String): Boolean;
 begin
-
+  isCPF(CPF);
 end;
 
 function TPessoaFisica.GetCPF: String;
@@ -100,6 +103,12 @@ function TPessoaFisica.GetIdade: Byte;
 begin
   Result := FIdade;
 end;
+
+{function TPessoaFisica.Gravar(aPessoa: TPessoa): String;
+begin
+  Result := 'Nome: ' + Nome + 'CNPJ: ' + TPessoaJuridica(xPessoa).CNPJ +
+            'Endereço: ' + Endereco + 'IE: ' + IE;
+end;  }
 
 procedure TPessoaFisica.SetCPF(const Value: String);
 begin
@@ -113,9 +122,9 @@ end;
 
 { TPessoaJuridica }
 
-procedure TPessoaJuridica.CNPJ_Valido;
+function TPessoaJuridica.CNPJ_Valido(CNPJ: String): Boolean;
 begin
-
+  isCNPJ(CNPJ);
 end;
 
 function TPessoaJuridica.GetCNPJ: String;
@@ -123,7 +132,7 @@ begin
   Result := FCNPJ;
 end;
 
-function TPessoaJuridica.GetFIE: String;
+function TPessoaJuridica.GetIE: String;
 begin
   Result := FIE;
 end;
@@ -133,7 +142,7 @@ begin
   FCNPJ := Value;
 end;
 
-procedure TPessoaJuridica.SetFIE(const Value: String);
+procedure TPessoaJuridica.SetIE(const Value: String);
 begin
   FIE := Value;
 end;
