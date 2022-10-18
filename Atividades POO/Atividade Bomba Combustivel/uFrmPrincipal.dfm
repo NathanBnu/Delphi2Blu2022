@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 354
-  ClientWidth = 634
+  ClientHeight = 264
+  ClientWidth = 522
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -38,5 +38,53 @@ object Form1: TForm1
       'Gasolina Aditivada'
       'Diesel'
       #193'lcool')
+  end
+  object bntEscolher: TButton
+    Left = 110
+    Top = 67
+    Width = 75
+    Height = 25
+    Caption = 'Escolher'
+    TabOrder = 1
+    OnClick = bntEscolherClick
+  end
+  object rdAbastecer: TRadioGroup
+    Left = 8
+    Top = 98
+    Width = 177
+    Height = 84
+    Caption = 'Abastecer'
+    Enabled = False
+    Items.Strings = (
+      'Por Valor'
+      'Por Litro')
+    TabOrder = 2
+    OnClick = rdAbastecerClick
+  end
+  object edtValor: TEdit
+    Left = 8
+    Top = 188
+    Width = 177
+    Height = 21
+    Enabled = False
+    TabOrder = 3
+    TextHint = 'Abastecer...'
+  end
+  object bntAbastecer: TButton
+    Left = 110
+    Top = 217
+    Width = 75
+    Height = 25
+    Caption = 'Abastecer'
+    Enabled = False
+    TabOrder = 4
+    OnClick = bntAbastecerClick
+  end
+  object mmResultado: TMemo
+    Left = 248
+    Top = 17
+    Width = 265
+    Height = 225
+    TabOrder = 5
   end
 end
