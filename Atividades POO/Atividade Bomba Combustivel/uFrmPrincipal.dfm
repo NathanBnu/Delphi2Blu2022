@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 264
+  ClientHeight = 407
   ClientWidth = 522
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -81,7 +81,7 @@ object Form1: TForm1
     OnClick = bntAbastecerClick
   end
   object mmResultado: TMemo
-    Left = 248
+    Left = 224
     Top = 17
     Width = 265
     Height = 225
