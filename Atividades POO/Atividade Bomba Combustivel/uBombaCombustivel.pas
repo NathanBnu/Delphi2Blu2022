@@ -4,31 +4,33 @@ interface
 
 type
 
-  TTipos = (tpDiesel, tpGasolinaComum, tpGasolinaAditivada, tpAlcool);
+  TTipos = (tpDiesel=2, tpGasolinaComum=0, tpGasolinaAditivada=1, tpAlcool=3);
 
   TBombaCombustivel = class
   private
-    FTipoCombustivel: TTipos;
+    FTipoCombustivel: String;
     FValorLitro: Currency;
     FQuantidadeCombustivel: Double;
 
     function GetQuantidadeCombustivel: Double;
-    function GetTipoCombustivel: TTipos;
+    function GetTipoCombustivel: String;
     function GetValorLitro: Currency;
 
     procedure SetQuantidadeCombustivel(const Value: Double);
-    procedure SetTipoCombustivel(const Value: TTipos);
+    procedure SetTipoCombustivel(const Value: String);
     procedure SetValorLitro(const Value: Currency);
+    {function NumeroCerto(var Value: String): String;}
 
   public
-    procedure abastecerPorValor(Const aValor: Currency);
-    procedure abastecerPorLitro(Const aLitros: Double);
+    function abastecerPorValor(Const aValor: Currency): String;
+    function abastecerPorLitro(Const aLitros: Double): String;
     procedure alterarValor(Const aAlterarValor: String);
-    procedure alterarCombustivel(Const aAlterarCombustivel: TTipos);
+    procedure alterarCombustivel(Const aAlterarCombustivel: String);
     procedure alterarQuantidadeCombustivel(Const aAlterarQtdCombustivel: String);
-    property TipoCombustivel: TTipos read GetTipoCombustivel write SetTipoCombustivel;
+    property TipoCombustivel: String read GetTipoCombustivel write SetTipoCombustivel;
     property ValorLitro: Currency read GetValorLitro write SetValorLitro;
     property QuantidadeCombustivel: Double read GetQuantidadeCombustivel write SetQuantidadeCombustivel;
+
   end;
 implementation
 
@@ -36,20 +38,7 @@ uses
   System.SysUtils, Vcl.Dialogs;
 
 { TBombaCombustivel }
-
-procedure TBombaCombustivel.abastecerPorLitro(const aLitros: Double);
-var
-  xQuantidade: Double;
-begin
-  xQuantidade := aLitros;
-
-  if xQuantidade > FQuantidadeCombustivel then
-    raise Exception.Create('Quantidade indisponivel');
-
-  FQuantidadeCombustivel := FQuantidadeCombustivel - xQuantidade;
-end;
-
-procedure TBombaCombustivel.abastecerPorValor(Const aValor : Currency);
+function TBombaCombustivel.abastecerPorValor(Const aValor : Currency): String;
 var
   xQuantidade: Double;
 begin
@@ -59,11 +48,38 @@ begin
     raise Exception.Create('Quantidade indisponivel');
 
   FQuantidadeCombustivel := FQuantidadeCombustivel - xQuantidade;
+  Result := xQuantidade.ToString;
 end;
 
-procedure TBombaCombustivel.alterarCombustivel(const aAlterarCombustivel: TTipos);
+function TBombaCombustivel.abastecerPorLitro(const aLitros: Double): String;
 var
-  xCombustivel: TTipos;
+  xQuantidade: Double;
+begin
+  xQuantidade := aLitros;
+
+  if xQuantidade > FQuantidadeCombustivel then
+    raise Exception.Create('Quantidade indisponivel');
+
+  FQuantidadeCombustivel := FQuantidadeCombustivel - xQuantidade;
+  xQuantidade := xQuantidade * ValorLitro;
+  Result := xQuantidade.ToString;
+end;
+
+procedure TBombaCombustivel.alterarValor(const aAlterarValor: String);
+var
+  xValor: Currency;
+begin
+  if TryStrtoCurr(aAlterarValor, xValor) then
+    begin
+      ValorLitro := xValor;
+    end
+  else
+    ShowMessage('Erro');
+end;
+
+procedure TBombaCombustivel.alterarCombustivel(const aAlterarCombustivel: String);
+var
+  xCombustivel: String;
 begin
   TipoCombustivel := xCombustivel;
 end;
@@ -80,31 +96,19 @@ begin
      ShowMessage('Erro');
 end;
 
-procedure TBombaCombustivel.alterarValor(const aAlterarValor: String);
-var
-  xValor: Double;
-begin
-  if TryStrtoFloat(aAlterarValor, xValor) then
-    begin
-      ValorLitro := xValor;
-    end
-  else
-    ShowMessage('Erro');
-end;
-
 function TBombaCombustivel.GetQuantidadeCombustivel: Double;
 begin
-  result := QuantidadeCombustivel;
+  result := FQuantidadeCombustivel;
 end;
 
-function TBombaCombustivel.GetTipoCombustivel: TTipos;
+function TBombaCombustivel.GetTipoCombustivel: String;
 begin
-  result := TipoCombustivel;
+  result := FTipoCombustivel;
 end;
 
 function TBombaCombustivel.GetValorLitro: Currency;
 begin
-  result := ValorLitro;
+  result := FValorLitro;
 end;
 
 procedure TBombaCombustivel.SetQuantidadeCombustivel(const Value: Double);
@@ -112,7 +116,7 @@ begin
   FQuantidadeCombustivel := Value;
 end;
 
-procedure TBombaCombustivel.SetTipoCombustivel(const Value: TTipos);
+procedure TBombaCombustivel.SetTipoCombustivel(const Value: String);
 begin
   FTipoCombustivel := Value;
 end;

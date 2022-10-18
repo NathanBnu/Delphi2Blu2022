@@ -2,8 +2,8 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 407
-  ClientWidth = 522
+  ClientHeight = 317
+  ClientWidth = 492
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -11,6 +11,8 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -81,10 +83,30 @@ object Form1: TForm1
     OnClick = bntAbastecerClick
   end
   object mmResultado: TMemo
-    Left = 224
-    Top = 17
+    Left = 209
+    Top = 8
     Width = 265
-    Height = 225
+    Height = 296
     TabOrder = 5
+  end
+  object bntAlterarValor: TButton
+    Left = 80
+    Top = 248
+    Width = 105
+    Height = 25
+    Caption = 'Alterar Valor Litro'
+    Enabled = False
+    TabOrder = 6
+    OnClick = bntAlterarValorClick
+  end
+  object btnAlteraQtdC: TButton
+    Left = 8
+    Top = 279
+    Width = 177
+    Height = 25
+    Caption = 'Alterar Quantidade Combustivel'
+    Enabled = False
+    TabOrder = 7
+    OnClick = btnAlteraQtdCClick
   end
 end
