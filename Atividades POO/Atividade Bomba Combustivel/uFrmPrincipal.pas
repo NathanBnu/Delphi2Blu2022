@@ -50,7 +50,7 @@ begin
     begin
       if rdAbastecer.ItemIndex = 0 then
         begin
-          mmResultado.Lines.Add(xBomba.TipoCombustivel + 'Total de litros: ' + xBomba.abastecerPorValor(xValor));
+          mmResultado.Lines.Add(xBomba.TipoCombustivel + 'Total de litros: ' + FormatFloat('0.000', xBomba.abastecerPorValor(xValor)));
         end
       else
         begin

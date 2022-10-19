@@ -19,14 +19,13 @@ type
     procedure SetQuantidadeCombustivel(const Value: Double);
     procedure SetTipoCombustivel(const Value: String);
     procedure SetValorLitro(const Value: Currency);
-    {function NumeroCerto(var Value: String): String;}
-
   public
-    function abastecerPorValor(Const aValor: Currency): String;
+    function abastecerPorValor(Const aValor: Currency): Double;
     function abastecerPorLitro(Const aLitros: Double): String;
     procedure alterarValor(Const aAlterarValor: String);
     procedure alterarCombustivel(Const aAlterarCombustivel: String);
     procedure alterarQuantidadeCombustivel(Const aAlterarQtdCombustivel: String);
+
     property TipoCombustivel: String read GetTipoCombustivel write SetTipoCombustivel;
     property ValorLitro: Currency read GetValorLitro write SetValorLitro;
     property QuantidadeCombustivel: Double read GetQuantidadeCombustivel write SetQuantidadeCombustivel;
@@ -38,7 +37,7 @@ uses
   System.SysUtils, Vcl.Dialogs;
 
 { TBombaCombustivel }
-function TBombaCombustivel.abastecerPorValor(Const aValor : Currency): String;
+function TBombaCombustivel.abastecerPorValor(Const aValor : Currency): Double;
 var
   xQuantidade: Double;
 begin
@@ -48,7 +47,7 @@ begin
     raise Exception.Create('Quantidade indisponivel');
 
   FQuantidadeCombustivel := FQuantidadeCombustivel - xQuantidade;
-  Result := xQuantidade.ToString;
+  Result := xQuantidade;
 end;
 
 function TBombaCombustivel.abastecerPorLitro(const aLitros: Double): String;
