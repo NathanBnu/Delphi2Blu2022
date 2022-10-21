@@ -27,6 +27,7 @@ type
     function Sair: Byte;
     function Subir: Byte;
     function Descer: Byte;
+    function EscolherAndar: Byte;
     property AndarAtual: Byte read GetAndarAtual write SetAndarAtual;
     property TotalAndares: Byte read GetTotalAndares write SetTotalAndares;
     property CapacidadePessoas: Byte read GetCapacidadePessoas write SetCapacidadePessoas;
@@ -36,7 +37,7 @@ type
 implementation
 
 uses
-  Vcl.Dialogs;
+  Vcl.Dialogs, System.SysUtils;
 
 { TElevador }
 
@@ -45,6 +46,7 @@ begin
   CapacidadePessoas := 3;
   TotalAndares := 10;
   AndarAtual := 0;
+  PessoasPresentes := 0;
 end;
 
 constructor TElevador.Destruo;
@@ -54,33 +56,64 @@ end;
 
 function TElevador.Entrar: Byte;
 begin
-  if not CapacidadePessoas >= 3  then
-    CapacidadePessoas := CapacidadePessoas + 1
+  if PessoasPresentes >= CapacidadePessoas then
+    ShowMessage('Não foi possivel entrar! Capacidade máxima de 3 pessoas.')
   else
-    ShowMessage('O elevador está cheio! Limite de 3 pessoas.');
+    PessoasPresentes := PessoasPresentes +1;
+
+  Result := PessoasPresentes;
+end;
+
+function TElevador.EscolherAndar: Byte;
+  var
+    xEscolha: Integer;
+begin
+  if PessoasPresentes = 0 then
+    ShowMessage('Elevador vazio... Você é um fantasma?')
+  else if TryStrToInt(Inputbox('Escolher Andar', 'Digite o andar', 'Exemplo: 7'), xEscolha)
+                          and (xEscolha >= 0) 
+                          and (xEscolha < 11) then
+    AndarAtual := xEscolha
+  else  
+    ShowMessage('Andar indisponível! Tente de 0 á 10.');
+  
+  Result := AndarAtual;
 end;
 
 function TElevador.Sair: Byte;
 begin
-  if not (CapacidadePessoas = 0) and (CapacidadePessoas > 3) then
-    CapacidadePessoas := CapacidadePessoas - 1
+  if PessoasPresentes <= 0 then
+    ShowMessage('Não foi possivel sair! O elevador está vazio.')
   else
-    ShowMessage('O elevador está vazio!');
+    PessoasPresentes := PessoasPresentes -1;
+
+  Result := PessoasPresentes;
 end;
+
 function TElevador.Subir: Byte;
 begin
-  if not(AndarAtual > 10) and (AndarAtual < 0) then
-    AndarAtual := AndarAtual + 1
+  if PessoasPresentes = 0 then
+    ShowMessage('Elevador vazio... Você é um fantasma?')
+
+  else if AndarAtual >= 10 then
+    ShowMessage('Andar indisponível! Tente de 0 á 10.')
   else
-    ShowMessage('Andar indisponível! Tente de 0 á 10.');
+    AndarAtual := AndarAtual +1 ;
+
+    Result := AndarAtual;
 end;
 
 function TElevador.Descer: Byte;
 begin
-  if not (AndarAtual = 0) and (AndarAtual > 10) then
-    AndarAtual := AndarAtual - 1
+  if PessoasPresentes = 0 then
+    ShowMessage('Elevador vazio... Você é um fantasma?')
+
+  else if AndarAtual = 0 then
+    ShowMessage('Não foi possivel descer! Você já está no térreo.')
   else
-    ShowMessage('Não foi possivel descer! Você já está no térreo.');
+    AndarAtual := AndarAtual -1;
+
+  Result := AndarAtual;
 end;
 
 function TElevador.GetAndarAtual: Byte;

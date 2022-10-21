@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Form1'
-  ClientHeight = 256
+  ClientHeight = 270
   ClientWidth = 432
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -11,6 +11,7 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
   PixelsPerInch = 96
   TextHeight = 13
   object Label1: TLabel
@@ -26,8 +27,7 @@ object Form1: TForm1
     Font.Name = 'Tahoma'
     Font.Style = [fsBold]
     ParentFont = False
-    ExplicitLeft = 8
-    ExplicitWidth = 418
+    ExplicitWidth = 104
   end
   object Label2: TLabel
     Left = 248
@@ -57,59 +57,89 @@ object Form1: TForm1
     Font.Style = [fsBold]
     ParentFont = False
   end
+  object lblAndarAtual: TLabel
+    Left = 196
+    Top = 8
+    Width = 3
+    Height = 13
+  end
+  object lblPessoasElevador: TLabel
+    Left = 378
+    Top = 8
+    Width = 3
+    Height = 13
+  end
+  object Label4: TLabel
+    Left = 352
+    Top = 231
+    Width = 59
+    Height = 13
+    Caption = 'Andares: 10'
+  end
+  object Label5: TLabel
+    Left = 352
+    Top = 250
+    Width = 69
+    Height = 13
+    Caption = 'Capacidade: 3'
+  end
   object btnInicializar: TButton
-    Left = 160
-    Top = 56
+    Left = 24
+    Top = 37
     Width = 75
     Height = 25
-    Caption = 'Inicializar'
+    Caption = 'Iniciar'
     TabOrder = 0
     OnClick = btnInicializarClick
   end
   object btnEntrar: TButton
-    Left = 160
-    Top = 96
+    Left = 24
+    Top = 77
     Width = 75
     Height = 25
     Caption = 'Entrar'
+    Enabled = False
     TabOrder = 1
+    OnClick = btnEntrarClick
   end
   object btnSair: TButton
-    Left = 160
-    Top = 136
+    Left = 24
+    Top = 117
     Width = 75
     Height = 25
     Caption = 'Sair'
+    Enabled = False
     TabOrder = 2
+    OnClick = btnSairClick
   end
   object btnSubir: TButton
-    Left = 160
-    Top = 176
+    Left = 24
+    Top = 157
     Width = 75
     Height = 25
     Caption = 'Subir'
+    Enabled = False
     TabOrder = 3
+    OnClick = btnSubirClick
   end
   object btnDescer: TButton
-    Left = 160
-    Top = 216
+    Left = 24
+    Top = 197
     Width = 75
     Height = 25
     Caption = 'Descer'
+    Enabled = False
     TabOrder = 4
+    OnClick = btnDescerClick
   end
-  object edtAndarAtual: TEdit
-    Left = 196
-    Top = 5
-    Width = 42
-    Height = 21
+  object btnEscolher: TButton
+    Left = 16
+    Top = 231
+    Width = 97
+    Height = 25
+    Caption = 'Escolher Andar'
+    Enabled = False
     TabOrder = 5
-  end
-  object edtPessoasElevador: TEdit
-    Left = 378
-    Top = 5
-    Width = 45
-    Height = 21
-    TabOrder = 6
+    OnClick = btnEscolherClick
   end
 end
