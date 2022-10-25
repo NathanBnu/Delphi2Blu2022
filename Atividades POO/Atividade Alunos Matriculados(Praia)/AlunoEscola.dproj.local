@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/10/19 10:00:47.000.035,=C:\Users\natha\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/23 12:59:22.753,=C:\Users\natha\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/23 12:59:28.447,=C:\Users\natha\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/10/23 13:00:16.622,C:\Users\natha\OneDrive\Documentos\Delphi2Blu2022\Atividades POO\Atividade Alunos Matriculados(Praia)\uFrmPrincipal.pas=C:\Users\natha\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/23 13:00:16.622,C:\Users\natha\OneDrive\Documentos\Delphi2Blu2022\Atividades POO\Atividade Alunos Matriculados(Praia)\uFrmPrincipal.dfm=C:\Users\natha\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/23 13:00:20.440,C:\Users\natha\OneDrive\Documentos\Delphi2Blu2022\Atividades POO\Atividade Alunos Matriculados(Praia)\uAluno.pas=C:\Users\natha\OneDrive\Documentos\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>2022/10/23 13:00:46.630,C:\Users\natha\OneDrive\Documentos\Delphi2Blu2022\Atividades POO\Atividade Alunos Matriculados(Praia)\AlunoEscola.dproj=C:\Users\natha\OneDrive\Documentos\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
