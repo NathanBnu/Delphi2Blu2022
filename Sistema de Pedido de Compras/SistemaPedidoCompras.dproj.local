@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/09/26 19:24:20.000.960,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/09/30 18:21:56.000.525,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:14:54.723,=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:15:14.999,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Sistema de Pedido de Compras\uFrmPrincipal.dfm=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.dfm</Transaction>
+    <Transaction>2022/10/31 20:15:14.999,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Sistema de Pedido de Compras\uFrmPrincipal.pas=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/10/31 20:15:28.997,C:\Users\nagoncalves\Documents\Delphi2Blu2022\Sistema de Pedido de Compras\SistemaPedidoCompras.dproj=C:\Users\nagoncalves\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+  </Transactions>
+</BorlandProject>
