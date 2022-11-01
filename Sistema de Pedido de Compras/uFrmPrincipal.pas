@@ -20,8 +20,8 @@ type
     Label4: TLabel;
     Image5: TImage;
     Label5: TLabel;
-    Panel2: TPanel;
     Image6: TImage;
+    procedure Image2Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,5 +34,15 @@ var
 implementation
 
 {$R *.dfm}
+
+uses UfrmCompradores;
+
+procedure TfrmPrincipal.Image2Click(Sender: TObject);
+begin
+  if not Assigned(frmCompradores) then
+    frmCompradores := TfrmCompradores.Create(Self);
+
+    frmCompradores.Show;
+end;
 
 end.
