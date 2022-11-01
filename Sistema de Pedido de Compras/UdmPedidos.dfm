@@ -20,8 +20,6 @@ object dmPedidos: TdmPedidos
     VendorLib = 
       'C:\Users\nagoncalves\Documents\Delphi2Blu2022\Sistema de Pedido ' +
       'de Compras\libmysql.dll'
-    OnDriverCreated = FDPhysMySQLDriverLink1DriverCreated
-    OnDriverDestroying = FDPhysMySQLDriverLink1DriverDestroying
     Left = 224
     Top = 152
   end
