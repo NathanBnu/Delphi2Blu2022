@@ -1885,13 +1885,12 @@ object frmPrincipal: TfrmPrincipal
     Height = 105
     Align = alTop
     TabOrder = 0
-    ExplicitLeft = -48
-    ExplicitTop = -6
     object Image1: TImage
       Left = 18
-      Top = 15
+      Top = 11
       Width = 73
       Height = 65
+      Cursor = crHandPoint
       Center = True
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
@@ -1924,6 +1923,7 @@ object frmPrincipal: TfrmPrincipal
         0BA1935C0C705CF2FD252979202F037C37A9F338C7205755D40D0F32408D065D
         8D34DE727EF26C8FBAE1610C14847E0138FCDE3140B115680000000049454E44
         AE426082}
+      OnClick = Image1Click
     end
     object Label1: TLabel
       Left = 197
@@ -1939,10 +1939,11 @@ object frmPrincipal: TfrmPrincipal
       ParentFont = False
     end
     object Image4: TImage
-      Left = 289
-      Top = 15
+      Left = 298
+      Top = 9
       Width = 73
       Height = 65
+      Cursor = crHandPoint
       Center = True
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
@@ -1973,12 +1974,14 @@ object frmPrincipal: TfrmPrincipal
         25C04B8A5C85FACBE82E6DD00292428DEF7AA7EFA43354FC116822291FDE53FE
         DFCE0E3DF63CB84BF298E6467E271996A477B655456E915400DDBE36BCD56BFE
         8A12A8A81810701D152FF00FCC9DC731A4253F6C0000000049454E44AE426082}
+      OnClick = Image4Click
     end
     object Image3: TImage
       Left = 198
       Top = 15
       Width = 73
       Height = 65
+      Cursor = crHandPoint
       Center = True
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
@@ -2007,12 +2010,14 @@ object frmPrincipal: TfrmPrincipal
         40A9EE18EF02C77C16466F45DD059E8F579D2B1A9CC5BFB928104AE4237026C7
         7E4E64A7C0DA1CC7596E36BB20E0641405E28EC40BFC0159BBB031073F9E4500
         00000049454E44AE426082}
+      OnClick = Image3Click
     end
     object Image2: TImage
       Left = 108
       Top = 15
       Width = 73
       Height = 65
+      Cursor = crHandPoint
       Center = True
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
@@ -2103,6 +2108,7 @@ object frmPrincipal: TfrmPrincipal
       Top = 16
       Width = 73
       Height = 65
+      Cursor = crHandPoint
       Center = True
       Picture.Data = {
         0954506E67496D61676589504E470D0A1A0A0000000D49484452000000300000
@@ -2143,6 +2149,7 @@ object frmPrincipal: TfrmPrincipal
         886EB2631C36FC4374D1D5147D2B5FC945E703C641A0233966F763B4FEEC5158
         74FFE0D4F8D45E052B90E9FFADF20BB17B3D40E5CACDCD0000000049454E44AE
         426082}
+      OnClick = Image5Click
     end
     object Label5: TLabel
       Left = 391

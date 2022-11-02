@@ -105,14 +105,6 @@ object frmCompradores: TfrmCompradores
     DataSource = DataSource2
     TabOrder = 4
   end
-  object DBEdit4: TDBEdit
-    Left = 200
-    Top = 158
-    Width = 121
-    Height = 21
-    DataSource = DataSource2
-    TabOrder = 5
-  end
   object FDTable1: TFDTable
     IndexFieldNames = 'Id'
     Connection = dmPedidos.FDConexao
@@ -123,6 +115,7 @@ object frmCompradores: TfrmCompradores
       FieldName = 'Id'
       Origin = 'Id'
       ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = True
     end
     object FDTable1Nome: TStringField
       FieldName = 'Nome'

@@ -25,7 +25,6 @@ type
     Label3: TLabel;
     DBEdit3: TDBEdit;
     DataSource2: TDataSource;
-    DBEdit4: TDBEdit;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
   private
