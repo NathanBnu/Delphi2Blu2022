@@ -2,7 +2,7 @@ object frmPedidos: TfrmPedidos
   Left = 0
   Top = 0
   Caption = 'Pedidos'
-  ClientHeight = 411
+  ClientHeight = 386
   ClientWidth = 653
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
