@@ -57,9 +57,10 @@ where criadoEm like '2022-01%' group by criadoEm order by criadoEm;
 -- 14 O valor de cada comanda (baseado nos itens) juntamente com o item mais caro da comanda; (NFIZ AINDA)
 
 
--- 15 O valor que cada cliente já gastou no restaurante; (N CONSEGUI SOMAR O VALOR TOTAL Q CADA UM GASTOU)
-select pessoa.id, pessoa.nome, (comanda.valor) from pessoa
-join comanda on comanda.id = comanda.id;
+-- 15 O valor que cada cliente já gastou no restaurante;
+select pessoa.id, pessoa.nome, sum(comanda.valor) from pessoa
+join comanda on comanda.id = comanda.id
+group by pessoa.nome; 
 
 -- 16 Listar o código das mesas juntamente com o nome dos atendentes responsáveis por cada mesa (apenas as mesas que contém atendente);
 SELECT mesa.codigo, pessoa.nome FROM MESA
