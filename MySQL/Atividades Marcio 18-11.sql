@@ -50,12 +50,11 @@ where tipoPessoa = 'F';
 select count(criadoEm) from comanda
 where criadoEm >= '2020-11-18';
 
--- 13 O maior valor de comanda (considerando apenas o valor da comanda) dia a dia do mês atual; (NFIZ AINDA)
+-- 13 O maior valor de comanda (considerando apenas o valor da comanda) dia a dia do mês atual;
 select max(valor), criadoEm from comanda
 where criadoEm like '2022-01%' group by criadoEm order by criadoEm;
 
 -- 14 O valor de cada comanda (baseado nos itens) juntamente com o item mais caro da comanda; (NFIZ AINDA)
-
 
 -- 15 O valor que cada cliente já gastou no restaurante;
 select pessoa.id, pessoa.nome, sum(comanda.valor) from pessoa
