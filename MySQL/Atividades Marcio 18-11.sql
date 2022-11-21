@@ -54,8 +54,6 @@ where criadoEm >= '2020-11-18';
 select max(valor), criadoEm from comanda
 where criadoEm like '2022-01%' group by criadoEm order by criadoEm;
 
--- 14 O valor de cada comanda (baseado nos itens) juntamente com o item mais caro da comanda; (NFIZ AINDA)
-
 -- 15 O valor que cada cliente já gastou no restaurante;
 select pessoa.id, pessoa.nome, sum(comanda.valor) from pessoa
 join comanda on comanda.id = comanda.id
@@ -80,15 +78,57 @@ max(comanda.valor) as 'VALOR'
 from comanda
 join comandaProduto on comandaProduto.comandaId = comanda.id
 join mesa on comanda.mesaId = mesa.id
-join pessoa on mesa.atendenteid = pessoa.id
+join pessoa on mesa.atendenteid = pessoa.id;
 
- /* 20 Quantidade de clientes em cada dia;
-21 O funcionário mais velho que já fez algum atendimento
-22 A comanda com maior valor (valor da Comanda) e que não está paga
-23 A comanda com menor valor (valor da Comanda) e que já está paga
-24 Quantos clientes tem comandas em aberto
-25 Quanto cada mesa já arrecadou
-26 Quantidade de clientes que nunca consumiram no restaurante
-27 Os cliente que nunca consumiram no restaurante
-28 As comandas que estão em mesas ocupadas (juntamente com seu valor);
-29 Os 10 produtos mais vendidos (ultimo mês) */
+-- 23 A comanda com menor valor (valor da Comanda) e que já está paga
+select comanda.id 'Comanda', comanda.valor 'Maior Valor', statuscomanda.nome 'Situação' from comanda 
+join statuscomanda on statuscomanda.id = comanda.statuscomandaid
+where statuscomanda.nome = 'paga' 
+order by comanda.Valor desc
+limit 1;
+
+-- 24 Quantos clientes tem comandas em aberto
+select count(comanda.clienteid) as 'ClientesEmAberto', statuscomanda.nome as 'Situação' from comanda
+join statuscomanda on statuscomanda.id = comanda.statuscomandaid
+where statuscomanda.nome = 'em aberto';
+
+-- 25 Quanto cada mesa já arrecadou
+select mesaid as 'mesa', sum(valor) as 'valor' from comanda
+group by mesa;
+
+-- 26 Quantidade de clientes que nunca consumiram no restaurante
+select pessoa.nome as 'PessoaNuncaConsumiram' from pessoa
+left join comanda on comanda.clienteId = pessoa.id
+where pessoa.tipoPessoa = 'c'
+group by pessoa.nome
+order by pessoa.nome;
+
+-- 27 Os cliente que nunca consumiram no restaurante
+select pessoa.nome as 'PessoaNuncaConsumirar' from pessoa
+left join comanda on comanda.clienteId = pessoa.id
+where pessoa.tipoPessoa = 'c'
+group by pessoa.nome
+order by pessoa.nome;
+
+-- 28 As comandas que estão em mesas ocupadas (juntamente com seu valor);
+select mesa.id, statusmesa.nome, comanda.valor from mesa
+inner join statusmesa on mesa.statusMesaId = statusmesa.id
+join comanda on comanda.mesaId = mesa.id
+where mesa.statusmesaid = '3';
+
+-- 29 Os 10 produtos mais vendidos (ultimo mês) 
+select produto.nome, comandaproduto.quantidade, comandaproduto.criadoEm from produto
+inner join comandaproduto on comandaproduto.produtoid = produto.id
+where month(comandaproduto.criadoEm) = 10
+order by comandaproduto.quantidade desc
+limit 10;
+
+/* 
+-- 14 O valor de cada comanda (baseado nos itens) juntamente com o item mais caro da comanda; (NFIZ)
+
+-- 20 Quantidade de clientes em cada dia; (NFIZ)
+  
+-- 21 O funcionário mais velho que já fez algum atendimento (NFIZ)
+
+-- 22 A comanda com maior valor (valor da Comanda) e que não está paga (N TRAS CORRETO)
+*/
