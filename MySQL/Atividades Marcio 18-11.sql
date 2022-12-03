@@ -36,7 +36,7 @@ limit 3;
 -- 9 Busque os clientes que são aniversariantes do mês; (NAO ACHEI A COLUNA DATANASCIMENTO, FIZ COM A DATA DE CRIACAO)
 select * from pessoa
 where month(criadoEm) = 11
-order by criadoEm desc;
+order by criadoEm asc;
 
 -- 10 Mesas sem atendente;
 select * from mesa
@@ -55,9 +55,10 @@ select max(valor), criadoEm from comanda
 where criadoEm like '2022-01%' group by criadoEm order by criadoEm;
 
 -- 15 O valor que cada cliente já gastou no restaurante;
-select pessoa.id, pessoa.nome, sum(comanda.valor) from pessoa
-join comanda on comanda.id = comanda.id
-group by pessoa.nome; 
+select pessoa.id, pessoa.nome, sum(comanda.valor) from comanda
+join pessoa on comanda.clienteid = pessoa.id
+where pessoa.tipopessoa = 'c'
+group by pessoa.id; 
 
 -- 16 Listar o código das mesas juntamente com o nome dos atendentes responsáveis por cada mesa (apenas as mesas que contém atendente);
 SELECT mesa.codigo, pessoa.nome FROM MESA
@@ -123,12 +124,15 @@ where month(comandaproduto.criadoEm) = 10
 order by comandaproduto.quantidade desc
 limit 10;
 
-/* 
+-- corrigidos em aulas
 -- 14 O valor de cada comanda (baseado nos itens) juntamente com o item mais caro da comanda; (NFIZ)
+select comanda.id, max(comandaproduto.valortotal),
+max(comandaproduto.valortotal) from comanda
+join comandaproduto on comandaproduto.comandaid = comanda.id
+group by comandaproduto.comandaid order by comandaproduto.valortotal desc;
 
+/* 
 -- 20 Quantidade de clientes em cada dia; (NFIZ)
   
 -- 21 O funcionário mais velho que já fez algum atendimento (NFIZ)
-
 -- 22 A comanda com maior valor (valor da Comanda) e que não está paga (N TRAS CORRETO)
-*/
