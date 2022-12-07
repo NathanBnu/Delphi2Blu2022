@@ -1,4 +1,0 @@
-Nathan|8|8|
-Jefferson|9|10|
-Anderson|7|7,5|
-Jully|1|2|

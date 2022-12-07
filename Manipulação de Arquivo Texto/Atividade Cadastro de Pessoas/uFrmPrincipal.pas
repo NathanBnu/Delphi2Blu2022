@@ -55,6 +55,8 @@ var
 begin
   mmLista.Clear;
 
+  Reset(Farq);
+
   try
     xReg := 0;
 
