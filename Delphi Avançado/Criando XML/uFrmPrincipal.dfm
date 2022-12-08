@@ -27,5 +27,10 @@ object Form1: TForm1
     Height = 25
     Caption = 'Executar'
     TabOrder = 1
+    OnClick = btnLeituraClick
+  end
+  object XMLDocument1: TXMLDocument
+    Left = 440
+    Top = 48
   end
 end
