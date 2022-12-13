@@ -21,7 +21,7 @@ type
     Label1: TLabel;
     Image5: TImage;
     Layout2: TLayout;
-    Image3: TImage;
+    ImageMais: TImage;
     Label2: TLabel;
     Layout3: TLayout;
     Image6: TImage;
