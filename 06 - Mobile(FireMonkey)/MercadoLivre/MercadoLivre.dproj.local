@@ -6,6 +6,6 @@
     <Transaction>2022/12/13 20:35:06.260,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\uFrmPrincipal.pas=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
     <Transaction>2022/12/13 20:35:15.697,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\MercadoLivre.dproj=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
-  <ActiveMobileDevice>   <NoProfile iOSSimulator="iPhone5"/>
+  <ActiveMobileDevice>   <NoProfile iOSSimulator="iPhone5" Android="12fcff23"/>
   </ActiveMobileDevice>
 </BorlandProject>
