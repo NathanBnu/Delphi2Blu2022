@@ -39,6 +39,13 @@ type
     lyt_detalhes: TLayout;
     Rectangle2: TRectangle;
     circuloEndereco: TCircle;
+    lblproduto: TLabel;
+    lblQuantidade: TLabel;
+    linhaProduto: TLine;
+    circuloProduto: TCircle;
+    lblEndereco: TLabel;
+    lblComplemento: TLabel;
+    lblComprador: TLabel;
   private
     { Private declarations }
   public
