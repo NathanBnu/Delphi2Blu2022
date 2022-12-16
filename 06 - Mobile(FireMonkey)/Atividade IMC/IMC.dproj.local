@@ -2,10 +2,12 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/12/16 18:40:47.000.837,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/12/16 18:41:16.969,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/12/16 18:41:47.912,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\Atividade IMC\uFrmPrincipal.pas=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/12/16 18:41:47.912,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\Atividade IMC\uFrmPrincipal.fmx=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
-    <Transaction>2022/12/16 18:41:50.468,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\Atividade IMC\IMC.dproj=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
-  </Transactions>  <ActiveMobileDevice>   <NoProfile iOSSimulator="iPhone5"/>
-  </ActiveMobileDevice>
+    <Transaction>2022/12/16 18:41:16.000.969,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/16 18:41:47.000.912,C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\Atividade IMC\uFrmPrincipal.fmx</Transaction>
+    <Transaction>2022/12/16 18:41:47.000.912,C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\Atividade IMC\uFrmPrincipal.pas</Transaction>
+    <Transaction>2022/12/16 18:41:50.000.468,C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\Atividade IMC\IMC.dproj</Transaction>
+  </Transactions>
+	<ActiveMobileDevice>
+		<NoProfile iOSSimulator="iPhone5"/>
+	</ActiveMobileDevice>
 </BorlandProject>

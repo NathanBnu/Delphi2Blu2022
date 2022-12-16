@@ -110,6 +110,7 @@ object frmPrincipal: TfrmPrincipal
       object Rectangle1: TRectangle
         Align = Client
         Fill.Color = xFF4C74ED
+        HitTest = False
         Size.Width = 343.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
@@ -173,6 +174,7 @@ object frmPrincipal: TfrmPrincipal
       object Rectangle2: TRectangle
         Align = Client
         Fill.Color = xFF4C74ED
+        HitTest = False
         Size.Width = 313.000000000000000000
         Size.Height = 50.000000000000000000
         Size.PlatformDefault = False

@@ -65,16 +65,16 @@ begin
   if xResultado < 18.5 then
     lblResultado.Text := 'MAGREZA (' + (FormatCurr('#,##0.00', (xResultado))) + ') GRAU 0'
 
-  else if (xResultado > 18.5) and (xResultado < 24.5) then
+  else if (xResultado >= 18.5) and (xResultado < 24.5) then
     lblResultado.Text := 'NORMAL (' + (FormatCurr('#,##0.00',(xResultado))) + ') GRAU 0'
 
-  else if (xResultado > 25.0) and (xResultado < 29.9) then
+  else if (xResultado >= 25.0) and (xResultado < 29.9) then
     lblResultado.Text := 'SOBREPESO (' + (FormatCurr('#,##0.00',(xResultado))) + ') GRAU I'
 
-  else if (xResultado > 30.0) and (xResultado < 39.9) then
+  else if (xResultado >= 30.0) and (xResultado < 39.9) then
     lblResultado.Text := 'OBESIDADE (' + (FormatCurr('#,##0.00',(xResultado))) + ') GRAU II'
 
-  else if xResultado > 40.0 then
+  else if xResultado >= 40.0 then
     lblResultado.Text := 'OBESIDADE GRAVE (' + (FormatCurr('#,##0.00',(xResultado))) + ') GRAU III'
 
 end;
