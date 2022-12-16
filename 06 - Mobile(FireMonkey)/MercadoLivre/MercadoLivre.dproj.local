@@ -2,11 +2,11 @@
 <BorlandProject>
 	<Transactions>
     <Transaction>2022/12/13 20:34:35.000.829,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
-    <Transaction>2022/12/13 20:35:06.000.260,C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.fmx=C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\uFrmPrincipal.fmx</Transaction>
-    <Transaction>2022/12/13 20:35:06.000.260,C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas=C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\uFrmPrincipal.pas</Transaction>
-    <Transaction>2022/12/13 20:35:15.000.697,C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\MercadoLivre.dproj</Transaction>
+    <Transaction>2022/12/13 20:35:06.000.260,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\uFrmPrincipal.fmx=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.fmx</Transaction>
+    <Transaction>2022/12/13 20:35:06.000.260,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\uFrmPrincipal.pas=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2022/12/13 20:35:15.000.697,C:\Users\mysql\Documents\Delphi2Blu2022\06 - Mobile(FireMonkey)\MercadoLivre\MercadoLivre.dproj=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
   </Transactions>
 	<ActiveMobileDevice>
-		<NoProfile iOSSimulator="iPhone5" Android="12fcff23"/>
+		<NoProfile iOSSimulator="iPhone5" Android=""/>
 	</ActiveMobileDevice>
 </BorlandProject>
