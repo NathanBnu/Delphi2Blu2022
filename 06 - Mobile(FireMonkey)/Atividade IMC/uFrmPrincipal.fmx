@@ -173,9 +173,8 @@ object frmPrincipal: TfrmPrincipal
       object Rectangle2: TRectangle
         Align = Client
         Fill.Color = xFF4C74ED
-        Margins.Bottom = 1.000000000000000000
         Size.Width = 313.000000000000000000
-        Size.Height = 49.000000000000000000
+        Size.Height = 50.000000000000000000
         Size.PlatformDefault = False
         Stroke.Kind = None
       end
