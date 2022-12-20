@@ -54,6 +54,9 @@ type
     img_jogador: TImage;
     rect_fim_jogo: TRectangle;
     rect_progresso: TRectangle;
+    procedure OnClickSelecioneJogador(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure OnClickJogador(Sender: TObject);
   private
     { Private declarations }
   public
@@ -66,5 +69,61 @@ var
 implementation
 
 {$R *.fmx}
+
+procedure TfrmPrincipal.FormShow(Sender: TObject);
+begin
+  TabControl1.TabPosition := TTabPosition.None;
+  TabControl1.ActiveTab := TabItem1;
+end;
+
+procedure TfrmPrincipal.OnClickSelecioneJogador(Sender: TObject);
+var
+  xPosicao: Integer;
+  xRetangulo: String;
+  xJogador: String;
+begin
+  TabControl1.ActiveTab := TabItem2;
+
+  xRetangulo := (Sender as TRectangle).Name;
+  xPosicao := Pos('_', xRetangulo);
+  xJogador := Copy(xRetangulo, xPosicao + 1, Length(xRetangulo));
+
+  if xJogador = 'morango' then
+  begin
+    img_jogador.Bitmap := img_morango.Bitmap;
+    img_computador.Bitmap := img_banana.Bitmap;
+  end
+  else //banana
+  begin
+    img_jogador.Bitmap := img_banana.Bitmap;
+    img_computador.Bitmap := img_morango.Bitmap;
+  end;
+end;
+
+procedure TfrmPrincipal.OnClickJogador(Sender: TObject);
+var
+  xPosicao: Integer;
+  xCoordenadas: String;
+  xLinha: Byte;
+  xColuna: Byte;
+  xRetangulo: TRectangle;
+  xImagem: TImage;
+begin
+  xRetangulo := (Sender as TRectangle);
+
+  xPosicao := Pos('_', xRetangulo.Name);
+  xCoordenadas := Copy(xRetangulo.Name, xPosicao + 1, Length(xRetangulo.Name));
+
+  xLinha := StrToInt(Copy(xCoordenadas, 1, 1));
+  xColuna := StrToInt(Copy(xCoordenadas, 3, 1));
+
+  //FJogoVelha.RealizarJogada(TJogador.TpPlayer1, xLinha, xColuna);
+
+  xImagem := TImage(FindComponent('img_' + xCoordenadas));
+  xImagem.Bitmap := img_jogador.Bitmap;
+  xImagem.Visible := True;
+
+  xRetangulo.HitTest := False;
+end;
 
 end.
