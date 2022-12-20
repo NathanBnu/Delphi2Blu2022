@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.TabControl,
-  FMX.Objects, FMX.Layouts, FMX.Effects;
+  FMX.Objects, FMX.Layouts, FMX.Effects, UJogoVelha;
 
 type
   TfrmPrincipal = class(TForm)
@@ -149,7 +149,7 @@ begin
 
   if Assigned(xRetangulo) then
   begin
-    xImagem := Timagem(FindComponent('img_' + aCoordenadas));
+    xImagem := Timage(FindComponent('img_' + aCoordenadas));
     xImagem.Bitmap := img_computador.Bitmap;
     xImagem.Visible := True;
 
@@ -241,7 +241,7 @@ begin
     if (FJogoVelha.Jogadas < 5 ) or (FJogoVelha.FimJogo) then
       Self.AnimarFimJogo(rect_parabens)
     else
-      Self.AnimarFimJogo(rect_deu_velha).
+      Self.AnimarFimJogo(rect_deu_velha);
   end;
 end;
 
