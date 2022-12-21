@@ -12,22 +12,26 @@ type
     ToolBar1: TToolBar;
     imgMenu: TImage;
     imgComprar: TImage;
-    Rectangle1: TRectangle;
-    Rectangle2: TRectangle;
+    rect_menu: TRectangle;
+    rect_cesto: TRectangle;
     rect_barra_de_pesquisa: TRectangle;
     lblSearch: TLabel;
     Rectangle3: TRectangle;
     Image1: TImage;
     rect_paginas: TRectangle;
-    Label1: TLabel;
-    Label2: TLabel;
+    lblCoffee: TLabel;
+    lblNonCoffee: TLabel;
     FlowLayout1: TFlowLayout;
     rect_Titulo: TRectangle;
     lblTitulo: TLabel;
-    Rectangle4: TRectangle;
-    Rectangle5: TRectangle;
-    Label3: TLabel;
-    Label4: TLabel;
+    rect_cafe1: TRectangle;
+    rect_descricao: TRectangle;
+    lblTitulo1: TLabel;
+    lblTitulo2: TLabel;
+    Line1: TLine;
+    rect_fundo: TRectangle;
+    Circle1: TCircle;
+    lblMais: TLabel;
   private
     { Private declarations }
   public
