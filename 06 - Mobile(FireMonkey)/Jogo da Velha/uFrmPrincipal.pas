@@ -119,7 +119,7 @@ end;
 
 procedure TfrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  FJogoVelha.DisposeOf;
+  FJogoVelha.DisposeOf; //tipo um free and nil
 end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
