@@ -20,7 +20,7 @@ type
     rect_descri: TRectangle;
     Label1: TLabel;
     rect_image: TRectangle;
-    Rectangle6: TRectangle;
+    rect_img: TRectangle;
     rect_tamanho: TRectangle;
     Label2: TLabel;
     Circle1: TCircle;

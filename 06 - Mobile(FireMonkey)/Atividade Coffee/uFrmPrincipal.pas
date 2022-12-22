@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs, FMX.Objects,
-  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts;
+  FMX.Controls.Presentation, FMX.StdCtrls, FMX.Layouts, FMX.Effects;
 
 type
   TfrmPrincipal = class(TForm)
@@ -32,31 +32,31 @@ type
     rect_fundo: TRectangle;
     Circle1: TCircle;
     lblMais: TLabel;
-    Rectangle1: TRectangle;
+    rect_cafe2: TRectangle;
     Rectangle2: TRectangle;
     Label1: TLabel;
     Label2: TLabel;
     Circle2: TCircle;
     Label3: TLabel;
-    Rectangle4: TRectangle;
+    rect_cafe3: TRectangle;
     Rectangle5: TRectangle;
     Label4: TLabel;
     Label5: TLabel;
     Circle3: TCircle;
     Label6: TLabel;
-    Rectangle6: TRectangle;
+    rect_cafe4: TRectangle;
     Rectangle7: TRectangle;
     Label7: TLabel;
     Label8: TLabel;
     Circle4: TCircle;
     Label9: TLabel;
-    Rectangle8: TRectangle;
+    rect_cafe5: TRectangle;
     Rectangle9: TRectangle;
     Label10: TLabel;
     Label11: TLabel;
     Circle5: TCircle;
     Label12: TLabel;
-    Rectangle10: TRectangle;
+    rect_cafe6: TRectangle;
     Rectangle11: TRectangle;
     Label13: TLabel;
     Label14: TLabel;
@@ -73,7 +73,14 @@ type
     Image5: TImage;
     Rectangle15: TRectangle;
     Image6: TImage;
-    procedure FlowLayout1Click(Sender: TObject);
+    rect_notificacao: TRectangle;
+    Label16: TLabel;
+    Rectangle1: TRectangle;
+    Line2: TLine;
+    ShadowEffect1: TShadowEffect;
+
+    procedure Onrect_Click(Sender: TObject);
+    procedure Image4Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -90,9 +97,15 @@ uses
 
 {$R *.fmx}
 
-procedure TfrmPrincipal.FlowLayout1Click(Sender: TObject);
+procedure TfrmPrincipal.Image4Click(Sender: TObject);
 begin
-  frmSecundaria.show;
+  //rect_notificacao.Visible := true;
+end;
+
+procedure TfrmPrincipal.Onrect_Click(Sender: TObject);
+begin
+  frmSecundaria.Show;
+  frmSecundaria.rect_img.Fill := (Sender as TRectangle).Fill;
 end;
 
 end.
