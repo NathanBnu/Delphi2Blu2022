@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Imaging.pngimage;
+  Vcl.Imaging.pngimage, Vcl.Menus, UfrmRelUnidadeMedida;
 
 type
   TfrmPrincipal = class(TForm)
@@ -21,11 +21,20 @@ type
     Image5: TImage;
     Label5: TLabel;
     Image6: TImage;
+    Label6: TLabel;
+    Image7: TImage;
+    PopupMenu1: TPopupMenu;
+    PopupMenu11: TMenuItem;
+    Compradores1: TMenuItem;
+    Fornecedores1: TMenuItem;
+    UnMedida1: TMenuItem;
+    Pedidos1: TMenuItem;
     procedure Image2Click(Sender: TObject);
     procedure Image3Click(Sender: TObject);
     procedure Image4Click(Sender: TObject);
     procedure Image1Click(Sender: TObject);
     procedure Image5Click(Sender: TObject);
+    procedure UnMedida1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -79,6 +88,14 @@ begin
     frmPedidos := TfrmPedidos.Create(Self);
 
     frmPedidos.Show;
+end;
+
+procedure TfrmPrincipal.UnMedida1Click(Sender: TObject);
+begin
+  if not Assigned(frmRelUnidadeMedida) then
+    frmRelUnidadeMedida := TfrmRelUnidadeMedida.Create(Self);
+
+  frmRelUnidadeMedida.Show;
 end;
 
 end.
