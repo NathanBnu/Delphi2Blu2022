@@ -8,7 +8,10 @@ uses
   UfrmFornecedores in 'UfrmFornecedores.pas' {frmFornecedores},
   UfrmUnMedida in 'UfrmUnMedida.pas' {frmUnidadeMedida},
   UfrmProdutos in 'UfrmProdutos.pas' {frmProdutos},
-  UfrmPedidos in 'UfrmPedidos.pas' {frmPedidos};
+  UfrmPedidos in 'UfrmPedidos.pas' {frmPedidos},
+  UfrmRelUnidadeMedida in 'UfrmRelUnidadeMedida.pas' {frmRelUnidadeMedida},
+  UfrmRelProdutos in 'UfrmRelProdutos.pas' {frmRelProdutos},
+  UfrmRelCompradores in 'UfrmRelCompradores.pas' {frmRelCompradores};
 
 {$R *.res}
 

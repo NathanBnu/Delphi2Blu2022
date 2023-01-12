@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.StdCtrls,
-  Vcl.Imaging.pngimage, Vcl.Menus, UfrmRelUnidadeMedida;
+  Vcl.Imaging.pngimage, Vcl.Menus, UfrmRelUnidadeMedida, UfrmRelProdutos,
+  UdmPedidos;
 
 type
   TfrmPrincipal = class(TForm)
@@ -35,6 +36,8 @@ type
     procedure Image1Click(Sender: TObject);
     procedure Image5Click(Sender: TObject);
     procedure UnMedida1Click(Sender: TObject);
+    procedure PopupMenu11Click(Sender: TObject);
+    procedure Compradores1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -48,7 +51,16 @@ implementation
 
 {$R *.dfm}
 
-uses UfrmCompradores, UfrmFornecedores, UfrmUnMedida, UfrmProdutos, UfrmPedidos;
+uses UfrmCompradores, UfrmFornecedores, UfrmUnMedida, UfrmProdutos, UfrmPedidos,
+  UfrmRelCompradores;
+
+procedure TfrmPrincipal.Compradores1Click(Sender: TObject);
+begin
+  if not Assigned(frmRelCompradores) then
+    frmRelCompradores := TfrmRelCompradores.Create(Self);
+
+  frmRelCompradores.Show;
+end;
 
 procedure TfrmPrincipal.Image1Click(Sender: TObject);
 begin
@@ -88,6 +100,14 @@ begin
     frmPedidos := TfrmPedidos.Create(Self);
 
     frmPedidos.Show;
+end;
+
+procedure TfrmPrincipal.PopupMenu11Click(Sender: TObject);
+begin
+  if not Assigned(frmRelProdutos) then
+    frmRelProdutos := TfrmRelProdutos.Create(Self);
+
+  frmRelProdutos.Show;
 end;
 
 procedure TfrmPrincipal.UnMedida1Click(Sender: TObject);

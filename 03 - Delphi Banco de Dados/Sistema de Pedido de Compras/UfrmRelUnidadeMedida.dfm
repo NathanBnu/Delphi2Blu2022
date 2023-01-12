@@ -55,7 +55,6 @@ object frmRelUnidadeMedida: TfrmRelUnidadeMedida
     end
   end
   object FDQuery1: TFDQuery
-    Active = True
     Connection = dmPedidos.FDConexao
     SQL.Strings = (
       

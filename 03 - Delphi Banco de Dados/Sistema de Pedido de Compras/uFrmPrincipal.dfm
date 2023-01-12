@@ -2566,9 +2566,11 @@ object frmPrincipal: TfrmPrincipal
     Top = 32
     object PopupMenu11: TMenuItem
       Caption = '&Produtos'
+      OnClick = PopupMenu11Click
     end
     object Compradores1: TMenuItem
       Caption = '&Compradores'
+      OnClick = Compradores1Click
     end
     object Fornecedores1: TMenuItem
       Caption = '&Fornecedores'
