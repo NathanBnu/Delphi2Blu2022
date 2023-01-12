@@ -291,6 +291,6 @@ object frmRelCompradores: TfrmRelCompradores
     PDFStandard = psNone
     PDFVersion = pv17
     Left = 408
-    Top = 224
+    Top = 216
   end
 end

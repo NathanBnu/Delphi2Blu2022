@@ -2574,6 +2574,7 @@ object frmPrincipal: TfrmPrincipal
     end
     object Fornecedores1: TMenuItem
       Caption = '&Fornecedores'
+      OnClick = Fornecedores1Click
     end
     object UnMedida1: TMenuItem
       Caption = '&Un.Medida'
