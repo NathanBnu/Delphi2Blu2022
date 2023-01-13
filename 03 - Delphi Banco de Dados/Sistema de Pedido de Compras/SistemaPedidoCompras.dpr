@@ -11,7 +11,9 @@ uses
   UfrmPedidos in 'UfrmPedidos.pas' {frmPedidos},
   UfrmRelUnidadeMedida in 'UfrmRelUnidadeMedida.pas' {frmRelUnidadeMedida},
   UfrmRelProdutos in 'UfrmRelProdutos.pas' {frmRelProdutos},
-  UfrmRelCompradores in 'UfrmRelCompradores.pas' {frmRelCompradores};
+  UfrmRelCompradores in 'UfrmRelCompradores.pas' {frmRelCompradores},
+  UfrmRelFornecedores in 'UfrmRelFornecedores.pas' {frmRelFornecedores},
+  UfrmRelPedidos in 'UfrmRelPedidos.pas' {frmRelPedidos};
 
 {$R *.res}
 

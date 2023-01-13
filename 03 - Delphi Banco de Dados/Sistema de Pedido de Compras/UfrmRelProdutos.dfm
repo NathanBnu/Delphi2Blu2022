@@ -28,10 +28,17 @@ object frmRelProdutos: TfrmRelProdutos
       Height = 13
       Caption = 'Descri'#231#227'o'
     end
+    object Label2: TLabel
+      Left = 272
+      Top = 24
+      Width = 57
+      Height = 13
+      Caption = 'Un . Medida'
+    end
     object edtDescricao: TEdit
       Left = 16
       Top = 51
-      Width = 377
+      Width = 209
       Height = 21
       TabOrder = 0
     end
@@ -53,19 +60,42 @@ object frmRelProdutos: TfrmRelProdutos
       TabOrder = 2
       OnClick = btnExportarClick
     end
+    object edtUnMedida: TEdit
+      Left = 264
+      Top = 51
+      Width = 121
+      Height = 21
+      TabOrder = 3
+    end
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = dmPedidos.FDConexao
     SQL.Strings = (
+      'SELECT PRODUTO.ID,'
+      '       PRODUTO.DESCRICAO, '
+      '       UNIDADEMEDIDA.DESCRICAO UNDMEDIDA'
+      'FROM PRODUTO'
       
-        'SELECT ID, DESCRICAO FROM PRODUTO WHERE(DESCRICAO LIKE :DESCRICA' +
-        'O) OR (COALESCE(:DESCRICAO,'#39#39') ='#39#39')'
-      '')
+        'LEFT JOIN UNIDADEMEDIDA ON PRODUTO.IDUNIDADEMEDIDA = UNIDADEMEDI' +
+        'DA.ID'
+      
+        'WHERE ((PRODUTO.DESCRICAO LIKE :DESCRICAO) OR (COALESCE(:DESCRIC' +
+        'AO, '#39#39') = '#39#39'))'
+      
+        'AND ((UNIDADEMEDIDA.DESCRICAO LIKE :UNDMEDIDA) OR (COALESCE(:UND' +
+        'MEDIDA, '#39#39') = '#39#39'))')
     Left = 272
     Top = 216
     ParamData = <
       item
         Name = 'DESCRICAO'
+        DataType = ftString
+        ParamType = ptInput
+        Value = Null
+      end
+      item
+        Name = 'UNDMEDIDA'
         DataType = ftString
         ParamType = ptInput
         Value = Null
@@ -88,7 +118,7 @@ object frmRelProdutos: TfrmRelProdutos
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44937.883032013900000000
-    ReportOptions.LastChange = 44937.889863726900000000
+    ReportOptions.LastChange = 44938.789173923600000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -179,6 +209,22 @@ object frmRelProdutos: TfrmRelProdutos
             'Relat'#243'rio')
           ParentFont = False
         end
+        object Memo4: TfrxMemoView
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 11.338590000000000000
+          Width = 102.047310000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Un. Medida')
+          ParentFont = False
+        end
       end
       object MasterData1: TfrxMasterData
         FillType = ftBrush
@@ -222,6 +268,20 @@ object frmRelProdutos: TfrmRelProdutos
           Frame.Typ = []
           Memo.UTF8W = (
             '[frxDBDataset1."DESCRICAO"]')
+        end
+        object frxDBDataset1UNDMEDIDA: TfrxMemoView
+          IndexTag = 1
+          AllowVectorExport = True
+          Left = 170.078850000000000000
+          Top = 18.897650000000000000
+          Width = 102.047310000000000000
+          Height = 18.897650000000000000
+          DataField = 'UNDMEDIDA'
+          DataSet = frxDBDataset1
+          DataSetName = 'frxDBDataset1'
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[frxDBDataset1."UNDMEDIDA"]')
         end
       end
     end

@@ -39,6 +39,7 @@ type
     procedure PopupMenu11Click(Sender: TObject);
     procedure Compradores1Click(Sender: TObject);
     procedure Fornecedores1Click(Sender: TObject);
+    procedure Pedidos1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,7 +54,7 @@ implementation
 {$R *.dfm}
 
 uses UfrmCompradores, UfrmFornecedores, UfrmUnMedida, UfrmProdutos, UfrmPedidos,
-  UfrmRelCompradores, UfrmRelFornecedores;
+  UfrmRelCompradores, UfrmRelFornecedores, UfrmRelPedidos;
 
 procedure TfrmPrincipal.Compradores1Click(Sender: TObject);
 begin
@@ -109,6 +110,14 @@ begin
     frmPedidos := TfrmPedidos.Create(Self);
 
     frmPedidos.Show;
+end;
+
+procedure TfrmPrincipal.Pedidos1Click(Sender: TObject);
+begin
+  if not Assigned(frmRelpedidos) then
+    frmRelpedidos := TfrmRelpedidos.Create(Self);
+
+  frmRelpedidos.Show;
 end;
 
 procedure TfrmPrincipal.PopupMenu11Click(Sender: TObject);

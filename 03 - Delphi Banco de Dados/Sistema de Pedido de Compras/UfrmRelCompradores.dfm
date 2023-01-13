@@ -93,7 +93,7 @@ object frmRelCompradores: TfrmRelCompradores
       ''
       'end.')
     Left = 120
-    Top = 224
+    Top = 216
     Datasets = <
       item
         DataSet = frxDBDataset1
