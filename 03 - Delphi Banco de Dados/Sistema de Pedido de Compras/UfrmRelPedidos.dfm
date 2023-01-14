@@ -518,7 +518,7 @@ object frmRelPedidos: TfrmRelPedidos
         'RA.QUANTIDADE, PRODUTO.DESCRICAO FROM ITEMCOMPRA LEFT JOIN PRODU' +
         'TO ON PRODUTO.ID = ITEMCOMPRA.IDPRODUTO')
     Left = 296
-    Top = 384
+    Top = 400
   end
   object frxDBDataset2: TfrxDBDataset
     UserName = 'frxDBDataset2'
@@ -531,6 +531,6 @@ object frmRelPedidos: TfrmRelPedidos
   object dtsPedido: TDataSource
     DataSet = QryPedido
     Left = 416
-    Top = 360
+    Top = 400
   end
 end

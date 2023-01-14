@@ -15,8 +15,8 @@ object DataModule1: TDataModule1
   end
   object FDPhysMySQLDriverLink1: TFDPhysMySQLDriverLink
     VendorLib = 
-      'C:\Users\natha\OneDrive\Documentos\Delphi2Blu2022\03 - Delphi Ba' +
-      'nco de Dados\Atividade Relat'#243'rios\lib\libmysql.dll'
+      'C:\Users\mysql\Documents\Delphi2Blu2022\03 - Delphi Banco de Dad' +
+      'os\Atividade Relat'#243'rios\lib\libmysql.dll'
     Left = 224
     Top = 40
   end
