@@ -21,6 +21,7 @@ type
     frxDBDataset1: TfrxDBDataset;
     frxReport1: TfrxReport;
     frxPDFExport1: TfrxPDFExport;
+    FDQuerySum: TFDQuery;
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure btnVisualizarClick(Sender: TObject);
     procedure btnExportarClick(Sender: TObject);

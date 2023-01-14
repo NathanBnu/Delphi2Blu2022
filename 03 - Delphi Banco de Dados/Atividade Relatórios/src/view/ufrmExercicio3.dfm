@@ -64,6 +64,7 @@ object frmExercicio3: TfrmExercicio3
     TabOrder = 2
   end
   object FDQuery1: TFDQuery
+    Active = True
     Connection = DataModule1.FDConnection1
     SQL.Strings = (
       
@@ -102,7 +103,7 @@ object frmExercicio3: TfrmExercicio3
     PrintOptions.Printer = 'Default'
     PrintOptions.PrintOnSheet = 0
     ReportOptions.CreateDate = 44939.860341805600000000
-    ReportOptions.LastChange = 44939.863548078700000000
+    ReportOptions.LastChange = 44939.909609363400000000
     ScriptLanguage = 'PascalScript'
     ScriptText.Strings = (
       'begin'
@@ -261,6 +262,41 @@ object frmExercicio3: TfrmExercicio3
             '[frxDBDataset1."FIRST_NAME"]')
         end
       end
+      object Footer1: TfrxFooter
+        FillType = ftBrush
+        Frame.Typ = []
+        Height = 68.031540000000000000
+        Top = 287.244280000000000000
+        Width = 718.110700000000000000
+        object SysMemo1: TfrxSysMemoView
+          AllowVectorExport = True
+          Left = 37.795300000000000000
+          Top = 34.015770000000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            '[SUM(<frxDBDataset1."Quantidade">,MasterData1,2)]')
+        end
+        object Memo5: TfrxMemoView
+          AllowVectorExport = True
+          Left = 37.795300000000000000
+          Top = 11.338590000000000000
+          Width = 37.795300000000000000
+          Height = 18.897650000000000000
+          Frame.Typ = []
+          Memo.UTF8W = (
+            'Total')
+        end
+        object Line2: TfrxLineView
+          AllowVectorExport = True
+          Left = 18.897650000000000000
+          Top = 3.779530000000000000
+          Width = 219.212740000000000000
+          Color = clBlack
+          Frame.Typ = [ftTop]
+        end
+      end
     end
   end
   object frxPDFExport1: TfrxPDFExport
@@ -289,5 +325,10 @@ object frmExercicio3: TfrmExercicio3
     PDFVersion = pv17
     Left = 288
     Top = 344
+  end
+  object FDQuerySum: TFDQuery
+    Connection = DataModule1.FDConnection1
+    Left = 408
+    Top = 408
   end
 end

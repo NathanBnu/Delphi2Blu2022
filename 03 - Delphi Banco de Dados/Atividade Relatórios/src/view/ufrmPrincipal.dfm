@@ -2766,7 +2766,6 @@ object frmPrincipal: TfrmPrincipal
   end
   object MainMenu1: TMainMenu
     Left = 440
-    Top = 16
     object Relatrios1: TMenuItem
       Caption = '&Relat'#243'rios'
       object Relatrio11: TMenuItem
