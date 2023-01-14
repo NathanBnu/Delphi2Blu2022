@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.Menus, ufrmExercicio1, udmConexao,
-  ufrmExercicio2, ufrmExercicio3, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+  ufrmExercicio2, ufrmExercicio3, Vcl.Imaging.jpeg, Vcl.ExtCtrls,
+  Vcl.Imaging.pngimage;
 
 type
   TfrmPrincipal = class(TForm)
@@ -14,6 +15,7 @@ type
     Relatrio11: TMenuItem;
     Relatrio21: TMenuItem;
     Relatrio31: TMenuItem;
+    Image1: TImage;
     procedure Relatrio11Click(Sender: TObject);
     procedure Relatrio21Click(Sender: TObject);
     procedure Relatrio31Click(Sender: TObject);
