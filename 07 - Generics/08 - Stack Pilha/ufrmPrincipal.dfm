@@ -11,6 +11,8 @@ object Form1: TForm1
   Font.Name = 'Tahoma'
   Font.Style = []
   OldCreateOrder = False
+  OnClose = FormClose
+  OnCreate = FormCreate
   PixelsPerInch = 96
   TextHeight = 13
   object Edit1: TEdit
@@ -28,6 +30,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Push'
     TabOrder = 1
+    OnClick = btnPushClick
   end
   object btnPop: TButton
     Left = 40
@@ -36,6 +39,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Pop'
     TabOrder = 2
+    OnClick = btnPopClick
   end
   object btnExtract: TButton
     Left = 40
@@ -44,6 +48,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Extract'
     TabOrder = 3
+    OnClick = btnExtractClick
   end
   object btnPeek: TButton
     Left = 40
@@ -52,6 +57,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Peek'
     TabOrder = 4
+    OnClick = btnPeekClick
   end
   object btnTrimExcess: TButton
     Left = 40
@@ -68,6 +74,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Count'
     TabOrder = 6
+    OnClick = btnCountClick
   end
   object btnCapacity: TButton
     Left = 40
@@ -76,6 +83,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Capacity'
     TabOrder = 7
+    OnClick = btnCapacityClick
   end
   object Memo1: TMemo
     Left = 208
