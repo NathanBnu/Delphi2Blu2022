@@ -39,21 +39,6 @@ implementation
 
 {$R *.dfm}
 
-procedure TForm1.btnCapacityClick(Sender: TObject);
-begin
-  Memo1.Lines.Add(FFila.Capacity.ToString);
-end;
-
-procedure TForm1.btnCountClick(Sender: TObject);
-begin
-  Memo1.Lines.Add(FFila.Count.ToString);
-end;
-
-procedure TForm1.btnDequeueClick(Sender: TObject);
-begin
-  memo1.Lines.Add(FFila.Dequeue);
-end;
-
 procedure TForm1.btnEnqueueClick(Sender: TObject);
 begin
   FFila.Enqueue(Edit1.Text);
@@ -65,9 +50,24 @@ begin
   memo1.Lines.Add(FFila.Extract);
 end;
 
+
 procedure TForm1.btnPeekClick(Sender: TObject);
 begin
   Memo1.Lines.Add(FFila.Peek);
+end;
+
+procedure TForm1.btnCountClick(Sender: TObject);
+begin
+  Memo1.Lines.Add(FFila.Count.ToString);
+end;
+procedure TForm1.btnDequeueClick(Sender: TObject);
+begin
+  memo1.Lines.Add(FFila.Dequeue);
+end;
+
+procedure TForm1.btnCapacityClick(Sender: TObject);
+begin
+  Memo1.Lines.Add(FFila.Capacity.ToString);
 end;
 
 procedure TForm1.btnTrimExcessClick(Sender: TObject);
