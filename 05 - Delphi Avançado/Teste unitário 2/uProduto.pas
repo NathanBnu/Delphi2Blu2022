@@ -39,7 +39,7 @@ begin
   else if Quantidade >= 51 then
     Result := (Quantidade * PrecoUnitario) * 0.75
   else
-    Result := (Quantidade * PrecoUnitario) * 0.0
+    Result := (Quantidade * PrecoUnitario) * 1
 end;
 
 function TProduto.GetNomeProduto: String;

@@ -50,7 +50,7 @@ begin
     mmExtrato.Lines.Add('Nome do produto: ' + xProduto.NomeProduto);
     mmExtrato.Lines.Add('Quantidade : ' + xProduto.Quantidade.ToString);
     mmExtrato.Lines.Add('Valor total: ' + (xProduto.PrecoUnitario * xProduto.Quantidade).ToString);
-    mmExtrato.Lines.Add('Valor com desconto: ' + xProduto.calcularDesconto.ToString);
+    mmExtrato.Lines.Add('Valor total com desconto: ' + xProduto.calcularDesconto.ToString);
   finally
     FreeAndNil(xProduto);
   end;
