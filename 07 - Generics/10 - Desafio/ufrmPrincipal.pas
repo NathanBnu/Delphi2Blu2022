@@ -41,6 +41,8 @@ implementation
 
 procedure TfrmPrincipal.btnGravarClick(Sender: TObject);
 begin
+  xPessoa := TPessoa.Create;
+
   xPessoa.CPF := edtCpf.Text;
   xPessoa.Nome := edtNome.Text;
   xPessoa.Especialidade := edtEspecialidade.Text;
@@ -48,11 +50,11 @@ begin
   xFila.Adicionar(xPessoa);
 
   lblContar.Caption := xFila.contar;
-
 end;
 
 procedure TfrmPrincipal.btnProximoClick(Sender: TObject);
 begin
+  Memo2.Lines := Memo1.Lines;
   Memo1.lines.Clear;
   xPessoa := xFila.proximo;
   Memo1.Lines.Add(xPessoa.Nome);
@@ -63,7 +65,7 @@ end;
 
 procedure TfrmPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
-  xPessoa.Free;
+  freeandnil(xPessoa);
 end;
 
 procedure TfrmPrincipal.FormCreate(Sender: TObject);
