@@ -156,6 +156,8 @@
         <DCCReference Include="model\entities\UInvoice.pas"/>
         <DCCReference Include="model\services\UBrazilTaxService.pas"/>
         <DCCReference Include="model\services\URentalService.pas"/>
+        <DCCReference Include="model\services\uTaxService.pas"/>
+        <DCCReference Include="model\services\UUSATaxService.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

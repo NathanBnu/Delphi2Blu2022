@@ -2,8 +2,10 @@ unit UBrazilTaxService;
 
 interface
 
+uses uTaxService;
+
 type
-  TBrazilTaxService = class
+  TBrazilTaxService = class(TInterfacedObject, ITaxService)
   private
   public
     function Tax(const aAMount: Double): Double;

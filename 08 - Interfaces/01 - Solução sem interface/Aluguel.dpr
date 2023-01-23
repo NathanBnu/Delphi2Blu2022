@@ -9,7 +9,10 @@ uses
   UCarRental in 'model\entities\UCarRental.pas',
   UInvoice in 'model\entities\UInvoice.pas',
   UBrazilTaxService in 'model\services\UBrazilTaxService.pas',
-  URentalService in 'model\services\URentalService.pas', System.SysUtils;
+  URentalService in 'model\services\URentalService.pas',
+  System.SysUtils,
+  uTaxService in 'model\services\uTaxService.pas',
+  UUSATaxService in 'model\services\UUSATaxService.pas';
 
 var
   xCarModel: String;
@@ -38,6 +41,21 @@ begin
     Write('Entre com o preço por hora: ');
     Readln(xStrPricePerHour);
     xPricePerHour :=  StrToFloatDef(xStrPricePerHour, 0);
+
+    Write('Entre com o preço por dia: ');
+    Readln(xStrPricePerDay);
+    xPricePerDay := StrToFloatDef(xStrPricePerDay, 0);
+
+    //xRentalService := TRentalService.Create(xPricePerDay, xPricePerHour, TBrazilTaxService.Create);
+    xRentalService := TRentalService.Create(xPricePerDay, xPricePerHour, TUSATaxService.Create);
+    xRentalService.ProcessInvoice(xCarRental);
+
+    WriteLn('FATURA');
+    WriteLn('Pagamento básico...: ', xCarRental.Invoice.BasicPayment.ToString);
+    Writeln('Imposto............: ', xCarRental.Invoice.Tax.ToString);
+    Writeln('Total..............: ', xCarRental.Invoice.TotalPayment.ToString);
+
+    Readln;
   except
     on E: Exception do
       Writeln(E.ClassName, ': ', E.Message);
