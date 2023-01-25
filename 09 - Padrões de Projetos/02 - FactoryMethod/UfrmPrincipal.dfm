@@ -55,6 +55,7 @@ object Form1: TForm1
     Height = 25
     Caption = 'Gerar Proje'#231#227'o'
     TabOrder = 2
+    OnClick = btnGerarClick
   end
   object Memo1: TMemo
     Left = 24

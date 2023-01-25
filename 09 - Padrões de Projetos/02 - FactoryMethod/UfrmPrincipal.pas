@@ -16,6 +16,7 @@ type
     btnGerar: TButton;
     Memo1: TMemo;
     cmbPrazoPagamento: TComboBox;
+    procedure btnGerarClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -28,5 +29,23 @@ var
 implementation
 
 {$R *.dfm}
+
+uses UFabricaPrazos, UPrazoAnual, UPrazoMensal, UTipoPrazo;
+
+procedure TForm1.btnGerarClick(Sender: TObject);
+var
+  xTipoPrazo: ITipoPrazo;
+  xMetodo: IFactoryMethod;
+begin
+  xMetodo := TFabricaPrazos.Create;
+  xTipoPrazo := xMetodo.ConsultarPrazo(cmbPrazoPagamento.Items[cmbPrazoPagamento.ItemIndex]);
+
+  memo1.Lines.Clear;
+  memo1.Lines.Add(xTipoPrazo.ConsultarDescricao);
+  memo1.Lines.Add(xTipoPrazo.ConsultarJuros);
+  memo1.Lines.Add(xTipoPrazo.ConsultarProjecao(StrToFloat(edtValor.Text), StrToInt(edtQtdParcelas.Text)));
+  memo1.Lines.Add(xTipoPrazo.ConsultarTotal);
+
+end;
 
 end.
