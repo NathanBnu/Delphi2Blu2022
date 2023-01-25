@@ -37,7 +37,9 @@ var
   xTipoPrazo: ITipoPrazo;
   xMetodo: IFactoryMethod;
 begin
+  //Instancia a fabrica (Factory method)
   xMetodo := TFabricaPrazos.Create;
+  //obtem o produto baseado no parametro informado
   xTipoPrazo := xMetodo.ConsultarPrazo(cmbPrazoPagamento.Items[cmbPrazoPagamento.ItemIndex]);
 
   memo1.Lines.Clear;
@@ -45,7 +47,6 @@ begin
   memo1.Lines.Add(xTipoPrazo.ConsultarJuros);
   memo1.Lines.Add(xTipoPrazo.ConsultarProjecao(StrToFloat(edtValor.Text), StrToInt(edtQtdParcelas.Text)));
   memo1.Lines.Add(xTipoPrazo.ConsultarTotal);
-
 end;
 
 end.
