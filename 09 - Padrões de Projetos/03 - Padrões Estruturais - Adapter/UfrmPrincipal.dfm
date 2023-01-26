@@ -13,7 +13,7 @@ object Form1: TForm1
   OldCreateOrder = False
   PixelsPerInch = 96
   TextHeight = 13
-  object lblLogadouro: TLabel
+  object lblLogradouro: TLabel
     Left = 48
     Top = 89
     Width = 61
@@ -41,7 +41,7 @@ object Form1: TForm1
     Height = 13
     Caption = 'CEP:'
   end
-  object Edit1: TEdit
+  object edtCep: TEdit
     Left = 48
     Top = 48
     Width = 121
@@ -49,13 +49,14 @@ object Form1: TForm1
     TabOrder = 0
     Text = 'Edit1'
   end
-  object Button1: TButton
+  object btnConsultarClick: TButton
     Left = 216
     Top = 46
     Width = 75
     Height = 25
-    Caption = 'Button1'
+    Caption = 'Consultar Click'
     TabOrder = 1
+    OnClick = btnConsultarClickClick
   end
   object Button2: TButton
     Left = 216
