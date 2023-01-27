@@ -107,6 +107,7 @@
         <DCCReference Include="pattern\UTarget.pas"/>
         <DCCReference Include="pattern\UWebServiceViaCEP.pas"/>
         <DCCReference Include="pattern\UAdaptee.pas"/>
+        <DCCReference Include="pattern\UAdapter.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

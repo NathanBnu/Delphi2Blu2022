@@ -58,12 +58,13 @@ object Form1: TForm1
     TabOrder = 1
     OnClick = btnConsultarClickClick
   end
-  object Button2: TButton
+  object btnConsultarCorreios: TButton
     Left = 216
     Top = 77
     Width = 75
     Height = 25
-    Caption = 'Button2'
+    Caption = 'Consultar Correios'
     TabOrder = 2
+    OnClick = btnConsultarCorreiosClick
   end
 end

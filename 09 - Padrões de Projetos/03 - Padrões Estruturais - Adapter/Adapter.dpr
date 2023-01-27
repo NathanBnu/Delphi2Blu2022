@@ -7,7 +7,8 @@ uses
   UInterfaceViaCep in 'pattern\UInterfaceViaCep.pas',
   UTarget in 'pattern\UTarget.pas',
   UWebServiceViaCEP in 'pattern\UWebServiceViaCEP.pas',
-  UAdaptee in 'pattern\UAdaptee.pas';
+  UAdaptee in 'pattern\UAdaptee.pas',
+  UAdapter in 'pattern\UAdapter.pas';
 
 {$R *.res}
 
