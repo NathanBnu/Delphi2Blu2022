@@ -2,7 +2,7 @@ object fraSaldo: TfraSaldo
   Left = 0
   Top = 0
   Width = 320
-  Height = 240
+  Height = 180
   TabOrder = 0
   object Label1: TLabel
     Left = 88

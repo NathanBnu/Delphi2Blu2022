@@ -4,10 +4,16 @@ interface
 
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
-  Vcl.Controls, Vcl.Forms, Vcl.Dialogs;
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, UConcreteObserver_Saldo,
+  UConcreteObserver_Historico, UConcreteSubject, UConcreteObserver_Log;
 
 type
-  TForm1 = class(TForm)
+  TfrmPrincipal = class(TForm)
+    fraCadastro1: TfraCadastro;
+    fraSaldo1: TfraSaldo;
+    fraHistorico1: TfraHistorico;
+    fraLog1: TfraLog;
+    procedure FormCreate(Sender: TObject);
   private
     { Private declarations }
   public
@@ -15,10 +21,17 @@ type
   end;
 
 var
-  Form1: TForm1;
+  frmPrincipal: TfrmPrincipal;
 
 implementation
 
 {$R *.dfm}
+
+procedure TfrmPrincipal.FormCreate(Sender: TObject);
+begin
+  fraCadastro1.AdicionarObserver(fraSaldo1);
+  fraCadastro1.AdicionarObserver(fraHistorico1);
+  fraCadastro1.AdicionarObserver(fraLog1);
+end;
 
 end.

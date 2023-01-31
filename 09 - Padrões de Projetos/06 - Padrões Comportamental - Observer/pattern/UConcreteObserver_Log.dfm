@@ -2,7 +2,7 @@ object fraLog: TfraLog
   Left = 0
   Top = 0
   Width = 320
-  Height = 240
+  Height = 161
   TabOrder = 0
   object Label1: TLabel
     Left = 112
@@ -15,7 +15,7 @@ object fraLog: TfraLog
     Left = 0
     Top = 22
     Width = 320
-    Height = 218
+    Height = 139
     ScrollBars = ssVertical
     TabOrder = 0
   end

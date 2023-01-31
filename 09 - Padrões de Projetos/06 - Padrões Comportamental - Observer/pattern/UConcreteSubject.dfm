@@ -1,8 +1,8 @@
-object Frame1: TFrame1
+object fraCadastro: TfraCadastro
   Left = 0
   Top = 0
   Width = 328
-  Height = 240
+  Height = 599
   TabOrder = 0
   object Label1: TLabel
     Left = 16
@@ -38,6 +38,7 @@ object Frame1: TFrame1
     Height = 77
     Caption = 'Gravar'
     TabOrder = 0
+    OnClick = btnGravarClick
   end
   object edtValor: TEdit
     Left = 73
@@ -50,7 +51,7 @@ object Frame1: TFrame1
     Left = 3
     Top = 104
     Width = 320
-    Height = 133
+    Height = 495
     DataSource = DataSource1
     TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
@@ -84,6 +85,7 @@ object Frame1: TFrame1
     Width = 121
     Height = 21
     TabOrder = 3
+    OnChange = cmbOperacaoChange
     Items.Strings = (
       'Cr'#233'dito'
       'D'#233'bito')
@@ -96,6 +98,12 @@ object Frame1: TFrame1
     TabOrder = 4
   end
   object ClientDataSet1: TClientDataSet
+    PersistDataPacket.Data = {
+      770000009619E0BD0100000018000000030000000000030000007700084F7065
+      726163616F01004900000001000557494454480200020079000943617465676F
+      72696101004900000001000557494454480200020079000556616C6F72080004
+      000000010007535542545950450200490006004D6F6E6579000000}
+    Active = True
     Aggregates = <>
     Params = <>
     Left = 48
