@@ -20,7 +20,7 @@ type
     RESTResponse1: TRESTResponse;
     procedure btnCalcularClick(Sender: TObject);
   private
-    const SUCESSO = 100;
+    const SUCESSO = 200;
   public
     procedure TratarResposta;
     procedure Calcular;
@@ -59,7 +59,10 @@ begin
     raise Exception.Create('Valor inválido!');
 
   case TOperacoes(cmbOperacao.ItemIndex) of
-    tpSomar: RESTClient1.BaseURL := Format('http://localhost:9005/somar/(%d)', xNumero1., xNumero2);
+    tpSomar: RESTClient1.BaseURL := 'http://localhost:9005/somar/' + xNumero1.ToString + '/' + xNumero2.ToString;
+    tpSubtrair: RESTClient1.BaseURL := 'http://localhost:9005/subtrair/' + xNumero1.ToString + '/' + xNumero2.ToString;
+    tpMultiplicar: RESTClient1.BaseURL := 'http://localhost:9005/multiplicar/' + xNumero1.ToString + '/' + xNumero2.ToString;
+    tpDividir: RESTClient1.BaseURL := 'http://localhost:9005/dividir/' + xNumero1.ToString + '/' + xNumero2.ToString;
   end;
 
   RESTRequest1.Execute;
