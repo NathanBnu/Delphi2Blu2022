@@ -52,6 +52,7 @@ end;
 procedure TForm1.Calcular;
 var
   xNumero1, xNumero2: Double;
+  xResultado : String;
 begin
   if not tryStrToFloat(edtNumero1.Text, xNumero1) then
     raise Exception.Create('Valor inválido!');
@@ -59,12 +60,13 @@ begin
     raise Exception.Create('Valor inválido!');
 
   case TOperacoes(cmbOperacao.ItemIndex) of
-    tpSomar: RESTClient1.BaseURL := 'http://localhost:9005/somar/' + xNumero1.ToString + '/' + xNumero2.ToString;
-    tpSubtrair: RESTClient1.BaseURL := 'http://localhost:9005/subtrair/' + xNumero1.ToString + '/' + xNumero2.ToString;
-    tpMultiplicar: RESTClient1.BaseURL := 'http://localhost:9005/multiplicar/' + xNumero1.ToString + '/' + xNumero2.ToString;
-    tpDividir: RESTClient1.BaseURL := 'http://localhost:9005/dividir/' + xNumero1.ToString + '/' + xNumero2.ToString;
+    tpSomar: xResultado := 'somar';
+    tpSubtrair: xResultado := 'subtrair';
+    tpDividir: xResultado := 'dividir';
+    tpMultiplicar: xResultado := 'multiplicar';
   end;
 
+  RestClient1.BaseURL := Format('http://localhost:9005/%s/%s/%s', [xResultado, xNumero1.ToString, xNumero2.ToString]);
   RESTRequest1.Execute;
 
   Self.TratarResposta;
