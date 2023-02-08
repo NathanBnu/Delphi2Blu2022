@@ -38,7 +38,7 @@ type
       class procedure UpdateUser(Req: THorseRequest; Res: THorseResponse; Next: TProc);
 
       [SwagDELETE('{id}', 'Deletar um cargo')]
-      [SwagParmPath('id', 'Id do cargo')]
+      [SwagParamPath('id', 'Id do cargo')]
       [SwagResponse(204)]
       [SwagResponse(400)]
       [SwagResponse(404)]
