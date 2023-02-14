@@ -89,10 +89,10 @@ begin
   Result.DriverName := 'MySQL';
   Result.LoginPrompt := False;
   Result.Params.Add('Database=api');
-  Result.Params.add('User=root');
+  Result.Params.add('User_Name=root');
   Result.Params.Add('Password=root');
   Result.Params.Add('Server=localhost');
-  Result.Params.Add('DriverId=MySQL');
+  Result.Params.Add('DriverID=MySQL');
   Result.Open;
 end;
 
@@ -115,7 +115,7 @@ end;
 class function TUtilBanco.RemoverRegistro(const aTabela: String;
   const aIdentificador: Integer): Boolean;
 const
-  COMANDO_DELETE = 'DELTE FROM %s WHERE ID =%d';
+  COMANDO_DELETE = 'DELETE FROM %s WHERE ID =%d';
 var
   xQuery: TFDQuery;
 begin
