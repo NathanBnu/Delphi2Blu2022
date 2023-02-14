@@ -23,7 +23,7 @@ end;
 
 begin
   THorse.Use(Jhonson);
-  THorse.Use(Query);
+  THorse.Use(Query);  //sempre depois do jhonson
 
   Registry;
 

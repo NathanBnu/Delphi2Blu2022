@@ -50,6 +50,7 @@ begin
       xQuery := TUtilBanco.ExecutarConsulta('SELECT * FROM PRODUTOS');
 
       Result := xQuery.ToJSONArray();
+      //TOJSONARRAY E LOADFROMTOJSON - Dataset.serialize
     except
       on e: Exception do
     end;
