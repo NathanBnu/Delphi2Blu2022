@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>2022/12/16 18:40:47.000.837,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/01/20 20:52:00.000.294,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/07 18:32:01.000.767,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/14 20:01:06.000.703,=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 19:39:40.833,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\DevsBets_Backend.dproj=C:\Users\mysql\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>2023/02/15 19:40:01.062,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 19:40:18.322,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\entities\UEntity.Users.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 19:59:48.598,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 19:59:59.897,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\entities\UEntity.Logins.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:07:18.827,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:07:30.333,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\entities\UEntity.Teams.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:17:07.860,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:17:19.718,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\entities\UEntity.Matchs.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:30:40.159,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:30:52.722,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\entities\UEntity.Bets.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:42:09.569,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 20:42:21.070,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\dao\UDAO.Intf.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+  </Transactions>
+</BorlandProject>
