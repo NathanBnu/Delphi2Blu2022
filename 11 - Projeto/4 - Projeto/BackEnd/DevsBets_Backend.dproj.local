@@ -18,5 +18,14 @@
     <Transaction>2023/02/15 20:30:52.722,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\entities\UEntity.Bets.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
     <Transaction>2023/02/15 20:42:09.569,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
     <Transaction>2023/02/15 20:42:21.070,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\dao\UDAO.Intf.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 21:04:05.824,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 21:04:18.163,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\dao\UDAO.Users.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 21:08:32.647,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 21:08:46.674,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\utils\UUtil.Banco.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\Unit1.pas</Transaction>
+    <Transaction>2023/02/15 21:12:49.322,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\utils\UUtil.Banco.pas=</Transaction>
+    <Transaction>2023/02/15 21:12:56.285,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\utils\UUtil.Banco.pas</Transaction>
+    <Transaction>2023/02/15 21:13:57.889,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\utils\UUtil.Banco.pas=</Transaction>
+    <Transaction>2023/02/15 21:14:04.356,=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\utils\UUtil.Banco.pas</Transaction>
+    <Transaction>2023/02/15 21:49:38.912,C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\dao\UDAO.pas=C:\Users\mysql\Documents\Delphi2Blu2022\11 - Projeto\4 - Projeto\BackEnd\model\dao\UDAO.Users.pas</Transaction>
   </Transactions>
 </BorlandProject>

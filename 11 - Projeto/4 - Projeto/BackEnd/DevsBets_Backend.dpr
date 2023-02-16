@@ -10,7 +10,9 @@ uses
   UEntity.Teams in 'model\entities\UEntity.Teams.pas',
   UEntity.Matchs in 'model\entities\UEntity.Matchs.pas',
   UEntity.Bets in 'model\entities\UEntity.Bets.pas',
-  UDAO.Intf in 'model\dao\UDAO.Intf.pas';
+  UDAO.Intf in 'model\dao\UDAO.Intf.pas',
+  UDAO in 'model\dao\UDAO.Base',
+  UUtil.Banco in 'model\utils\UUtil.Banco.pas';
 
 begin
 
