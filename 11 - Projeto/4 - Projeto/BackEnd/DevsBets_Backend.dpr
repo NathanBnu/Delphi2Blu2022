@@ -13,7 +13,16 @@ uses
   UDAO.Intf in 'model\dao\UDAO.Intf.pas',
   UDAO.Base in 'model\dao\UDAO.Base.pas',
   UUtil.Banco in 'model\utils\UUtil.Banco.pas',
-  UDAO.Users in 'model\dao\UDAO.Users.pas';
+  UDAO.Users in 'model\dao\UDAO.Users.pas',
+  UDAO.Teams in 'model\dao\UDAO.Teams.pas',
+  UDAO.Matchs in 'model\dao\UDAO.Matchs.pas',
+  UDAO.Bets in 'model\dao\UDAO.Bets.pas',
+  UController.Base in 'model\controllers\UController.Base.pas',
+  UController.User in 'model\controllers\UController.User.pas',
+  UController.Bet in 'model\controllers\UController.Bet.pas',
+  UController.Team in 'model\controllers\UController.Team.pas',
+  UController.Match in 'model\controllers\UController.Match.pas',
+  UController.Login in 'model\controllers\UController.Login.pas';
 
 begin
 

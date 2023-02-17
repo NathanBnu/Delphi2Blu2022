@@ -140,6 +140,15 @@
         <DCCReference Include="model\dao\UDAO.Base.pas"/>
         <DCCReference Include="model\utils\UUtil.Banco.pas"/>
         <DCCReference Include="model\dao\UDAO.Users.pas"/>
+        <DCCReference Include="model\dao\UDAO.Teams.pas"/>
+        <DCCReference Include="model\dao\UDAO.Matchs.pas"/>
+        <DCCReference Include="model\dao\UDAO.Bets.pas"/>
+        <DCCReference Include="model\controllers\UController.Base.pas"/>
+        <DCCReference Include="model\controllers\UController.User.pas"/>
+        <DCCReference Include="model\controllers\UController.Bet.pas"/>
+        <DCCReference Include="model\controllers\UController.Team.pas"/>
+        <DCCReference Include="model\controllers\UController.Match.pas"/>
+        <DCCReference Include="model\controllers\UController.Login.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>
