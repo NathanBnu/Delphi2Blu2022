@@ -13,7 +13,7 @@ type
       class function ValidarUser(const aUserName, aPassword: String): Boolean;
 
       [SwagGet('Listar Usuários', True)]
-      [SwagResponse(200, TUser, 'Infomrações do Usuário', True)]
+      [SwagResponse(200, TUser, 'Informações do Usuário', True)]
       [SwagResponse(404)]
       class procedure Gets(Req: THorseRequest; Res: THorseResponse; Next: TProc); override;
 
