@@ -3,11 +3,11 @@ unit UController.Login;
 interface
 
 uses
-  UController.Base,
   Horse,
-  JOSE.CORE.JWT,
-  JOSE.CORE.Builder,
+  JOSE.Core.JWT,
+  JOSE.Core.Builder,
   GBSwagger.Path.Attributes,
+  UController.Base,
   UEntity.Logins;
 
 type
@@ -15,8 +15,8 @@ type
   TControllerLogin = class(TControllerBase)
     private
     public
-      [SwagPost('Autenticação do Usuário')]
-      [SwagParmBody('Informações do Login', TLogin)]
+      [SwagPOST('Autenticação do Usuário')]
+      [SwagParamBody('Informações do Login', TLogin)]
       [SwagResponse(200, 'Token (String)')]
       [SwagResponse(400)]
       class procedure PostLogin(Req: THorseRequest; Res: THorseResponse; Next: TProc);
@@ -25,7 +25,8 @@ type
 implementation
 
 uses
-  System.JSON, System.SysUtils;
+  System.JSON,
+  System.SysUtils, UController.User;
 
 { TControllerLogin }
 
@@ -40,8 +41,8 @@ begin
   xToken := TJWT.Create;
   try
     //Token Claims
-    xToken.claims.Issuer := 'DevsBets';
-    xToken.Claims.Subject := 'Projeto Final';
+    xToken.Claims.Issuer     := 'DevsBets';
+    xToken.Claims.Subject    := 'Projeto Final';
     xToken.Claims.Expiration := Now + 1;
 
     xJSONLogin := Req.Body<TJSONObject>;
@@ -65,6 +66,7 @@ begin
     end;
 
     //Outros Claims
+    xToken.Claims.SetClaimOfType<Integer>('id', UController.User.GIdUser);
     xToken.Claims.SetClaimOfType<String>('login', xUser);
 
     //Assinatura

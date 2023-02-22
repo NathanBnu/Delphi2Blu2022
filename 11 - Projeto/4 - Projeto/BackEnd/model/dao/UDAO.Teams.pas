@@ -6,16 +6,16 @@ uses
   UDAO.Base;
 
 type
-  TTeam = class(TDAOBase)
-  public
-    constructor Create;
+  TDAOTeams = class(TDAOBase)
+    public
+      constructor Create;
   end;
 
 implementation
 
-{ TTeam }
+{ TDAOTeams }
 
-constructor TTeam.Create;
+constructor TDAOTeams.Create;
 begin
   FTabela := 'teams';
 end;

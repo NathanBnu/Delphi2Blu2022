@@ -3,27 +3,30 @@ unit UController.User;
 interface
 
 uses
-  Horse, GBSwagger.path.Attributes, UController.Base, UEntity.Users;
+  Horse,
+  GBSwagger.Path.Attributes,
+  UController.Base,
+  UEntity.Users;
 
 type
   [SwagPath('users', 'Usuários')]
   TControllerUser = class(TControllerBase)
     private
     public
-      class function ValidarUser(const aUserName, aPassword: String): Boolean;
+      class function ValidateUser(const aUserName, aPassWord: String): Boolean;
 
-      [SwagGet('Listar Usuários', True)]
+      [SwagGET('Listar Usuários', True)]
       [SwagResponse(200, TUser, 'Informações do Usuário', True)]
       [SwagResponse(404)]
       class procedure Gets(Req: THorseRequest; Res: THorseResponse; Next: TProc); override;
 
-      [SwagGet('{id}', 'Procurar um Usuário')]
+      [SwagGET('{id}', 'Procurar um Usuário')]
       [SwagParamPath('id', 'id do Usuário')]
       [SwagResponse(200, TUser, 'Informações do Usuário')]
       [SwagResponse(404)]
       class procedure Get(Req: THorseRequest; Res: THorseResponse; Next: TProc); override;
 
-      [SwagPost('Adicionar Novo Usuário')]
+      [SwagPOST('Adicionar Novo Usuário')]
       [SwagParamBody('Informações do Usuário', TUser)]
       [SwagResponse(201)]
       [SwagResponse(400)]
@@ -35,52 +38,57 @@ type
       [SwagResponse(400)]
       [SwagResponse(404)]
       class procedure Delete(Req: THorseRequest; Res: THorseResponse; Next: TProc); override;
-
   end;
+
+var
+  GIdUser: Integer;
+
 implementation
 
 { TControllerUser }
 
 uses
-  UDAO.Users, UDAO.Intf;
+  UDAO.Users,
+  UDAO.Intf;
 
-{ TControllerUser }
-
-class procedure TControllerUser.Delete(Req: THorseRequest; Res: THorseResponse;
-  Next: TProc);
+class procedure TControllerUser.Delete(Req: THorseRequest;
+  Res: THorseResponse; Next: TProc);
 begin
   FDAO := TDAOUsers.Create;
-  inherited;
+  Inherited;
 end;
 
 class procedure TControllerUser.Get(Req: THorseRequest; Res: THorseResponse;
   Next: TProc);
 begin
   FDAO := TDAOUsers.Create;
-  inherited;
+  Inherited;
 end;
 
-class procedure TControllerUser.Gets(Req: THorseRequest; Res: THorseResponse;
-  Next: TProc);
+class procedure TControllerUser.Gets(Req: THorseRequest;
+  Res: THorseResponse; Next: TProc);
 begin
   FDAO := TDAOUsers.Create;
-  inherited;
+  Inherited;
 end;
 
-class procedure TControllerUser.Post(Req: THorseRequest; Res: THorseResponse;
-  Next: TProc);
+class procedure TControllerUser.Post(Req: THorseRequest;
+  Res: THorseResponse; Next: TProc);
 begin
   FDAO := TDAOUsers.Create;
-  inherited;
+  Inherited;
 end;
 
-class function TControllerUser.ValidarUser(const aUserName,
-  aPassword: String): Boolean;
+class function TControllerUser.ValidateUser(const aUserName,
+  aPassWord: String): Boolean;
 var
   xDAO: IDAO;
 begin
-  xDAO := TDAOUsers.Create;
-  Result := TDAOUsers(xDAO).ValidarLogin(aUserName, aPassword);
+  xDAO   := TDAOUsers.Create;
+
+  GIdUser := TDAOUsers(xDAO).ValidarLogin(aUserName, aPassWord);
+
+  Result := GIdUser > 0;
 end;
 
 end.

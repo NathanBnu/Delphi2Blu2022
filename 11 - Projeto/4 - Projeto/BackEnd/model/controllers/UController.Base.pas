@@ -3,27 +3,29 @@ unit UController.Base;
 interface
 
 uses
-  Horse, UDAO.Intf;
+  Horse,
+  UDAO.Intf;
 
 type
   TControllerBase = class
     protected
       class var FDAO: IDAO;
     public
-      class procedure Gets(Req: THorseRequest; Res: THorseResponse; Next: TProc); Virtual;
-      class procedure Get(Req: THorseRequest; Res: THorseResponse; Next: TProc); Virtual;
-      class procedure Post(Req: THorseRequest; Res: THorseResponse; Next: TProc); Virtual;
-      class procedure Delete(Req: THorseRequest; Res: THorseResponse; Next: TProc); Virtual;
+      class procedure Gets(Req: THorseRequest; Res: THorseResponse; Next: TProc); virtual;
+      class procedure Get(Req: THorseRequest; Res: THorseResponse; Next: TProc); virtual;
+      class procedure Post(Req: THorseRequest; Res: THorseResponse; Next: TProc); virtual;
+      class procedure Delete(Req: THorseRequest; Res: THorseResponse; Next: TProc); virtual;
   end;
 
 implementation
 
+{ TControllerBase }
+
 uses
   System.JSON, System.SysUtils;
 
-{ TControllerBase }
-
-class procedure TControllerBase.Delete(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+class procedure TControllerBase.Delete(Req: THorseRequest;
+  Res: THorseResponse; Next: TProc);
 var
   xId: Integer;
 begin
@@ -41,7 +43,8 @@ begin
     Res.Status(THTTPStatus.InternalServerError);
 end;
 
-class procedure TControllerBase.Get(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+class procedure TControllerBase.Get(Req: THorseRequest; Res: THorseResponse;
+  Next: TProc);
 var
   xId: Integer;
 begin
@@ -53,18 +56,20 @@ begin
 
   xId := StrToIntDef(Req.Params.Items['id'], 0);
 
-  Res.Send<TJSONObject>(FDAO.ProcurarPorId(xid));
+  Res.Send<TJSONObject>(FDAO.ProcurarPorId(xId));
 end;
 
-class procedure TControllerBase.Gets(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+class procedure TControllerBase.Gets(Req: THorseRequest;
+  Res: THorseResponse; Next: TProc);
 begin
   Res.Send<TJSONArray>(FDAO.ObterRegistros);
 end;
 
-class procedure TControllerBase.Post(Req: THorseRequest; Res: THorseResponse; Next: TProc);
+class procedure TControllerBase.Post(Req: THorseRequest;
+  Res: THorseResponse; Next: TProc);
 begin
   if FDAO.AdicionarRegistro(Req.Body<TJSONObject>) then
-    Res.Status(THTTPSTATUS.Created)
+    Res.Status(THTTPStatus.Created)
   else
     Res.Status(THTTPStatus.InternalServerError);
 end;
