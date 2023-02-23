@@ -10,7 +10,10 @@ uses
   UEntity.Logins in '..\backend\model\entities\UEntity.Logins.pas',
   UEntity.Matchs in '..\backend\model\entities\UEntity.Matchs.pas',
   UEntity.Teams in '..\backend\model\entities\UEntity.Teams.pas',
-  UEntity.Users in '..\backend\model\entities\UEntity.Users.pas';
+  UEntity.Users in '..\backend\model\entities\UEntity.Users.pas',
+  UService.Base in 'model\services\UService.Base.pas',
+  UService.Intf in 'model\services\UService.Intf.pas',
+  UService.User in 'model\services\UService.User.pas';
 
 {$R *.res}
 
