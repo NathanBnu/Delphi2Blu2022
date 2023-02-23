@@ -276,6 +276,7 @@
         <DCCReference Include="model\services\UService.Base.pas"/>
         <DCCReference Include="model\services\UService.Intf.pas"/>
         <DCCReference Include="model\services\UService.User.pas"/>
+        <DCCReference Include="model\utils\UUtils.Constants.pas"/>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

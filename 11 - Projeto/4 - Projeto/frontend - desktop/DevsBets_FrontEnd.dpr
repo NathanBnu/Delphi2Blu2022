@@ -13,7 +13,8 @@ uses
   UEntity.Users in '..\backend\model\entities\UEntity.Users.pas',
   UService.Base in 'model\services\UService.Base.pas',
   UService.Intf in 'model\services\UService.Intf.pas',
-  UService.User in 'model\services\UService.User.pas';
+  UService.User in 'model\services\UService.User.pas',
+  UUtils.Constants in 'model\utils\UUtils.Constants.pas';
 
 {$R *.res}
 

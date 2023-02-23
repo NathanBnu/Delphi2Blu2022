@@ -27,7 +27,8 @@ implementation
 
 uses
   REST.Types,
-  System.JSON, {UUtils.Constants,} System.SysUtils, System.Classes, FireDac.comp.Client, DataSet.Serialize;
+  System.JSON, System.SysUtils, System.Classes, FireDac.comp.Client, DataSet.Serialize,
+  UUtils.Constants;
 
 constructor TServiceUser.Create;
 begin
@@ -70,12 +71,12 @@ begin
     FRESTRequest.Method := rmGet;
     FRESTRequest.Execute;
 
-    if FRESTResponse.StatusCode := API_SUCESSO then
+    if FRESTResponse.StatusCode = API_SUCESSO then
     begin
       xMemTable.LoadFromJSON(FRESTResponse.Content);
 
       if xMemTable.FindFirst then
-        Result := TUser.Create(xMemTable.FieldByName('id').AsString;
+        Result := TUser.Create(xMemTable.FieldByName('id').AsInteger);
     end;
   finally
     FreeAndNil(xMemTable);
@@ -85,7 +86,7 @@ end;
 procedure TServiceUser.Registrar;
 begin
   try
-    FRESTClient.BaseURL := URL.BASE_USER;
+    FRESTClient.BaseURL := URL_BASE_USER;
     FRESTRequest.Method := rmPost;
     FRESTRequest.Params.AddBody(FUser.JSON);
     FRESTRequest.Execute;
