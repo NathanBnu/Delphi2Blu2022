@@ -23,6 +23,7 @@ type
     Label2: TLabel;
     procedure Label3Click(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    procedure rectLogarClick(Sender: TObject);
   private
     procedure VoltarTela;
     procedure AbrirHome;
@@ -85,6 +86,11 @@ begin
   except on E: Exception do
     raise Exception.Create('Login: ' + E.Message);
   end;
+end;
+
+procedure TfrmLoginAuthentication.rectLogarClick(Sender: TObject);
+begin
+  Self.Logar;
 end;
 
 procedure TfrmLoginAuthentication.VoltarTela;

@@ -42,8 +42,10 @@ implementation
 {$R *.fmx}
 
 uses
+  UService.Intf,
   UfrmLogin,
-  //UService.Users,
+  UService.User,
+  UEntity.Users,
   UEntity.Logins;
 
 procedure TfrmLoginRegistry.FormClose(Sender: TObject;
@@ -64,10 +66,10 @@ begin
 end;
 
 procedure TfrmLoginRegistry.Registrar;
-//var
-  //xServiceUser: IService;
+var
+  xServiceUser: IService;
 begin
-  (*if Trim(edtNome.Text) = EmptyStr then
+  if Trim(edtNome.Text) = EmptyStr then
     raise Exception.Create('Informe o Nome.');
 
   if Trim(edtLogin.Text) = EmptyStr then
@@ -82,11 +84,11 @@ begin
 
   try
     xServiceUser.Registrar;
-    ShowMessage('Usuário registrado com sucesso.')
+    ShowMessage('Usuário registrado com sucesso.');
     Self.VoltarTela;
   except on E: Exception do
     raise Exception.Create('Erro:' + E.Message);
-  end;*)
+  end;
 end;
 
 procedure TfrmLoginRegistry.VoltarTela;
