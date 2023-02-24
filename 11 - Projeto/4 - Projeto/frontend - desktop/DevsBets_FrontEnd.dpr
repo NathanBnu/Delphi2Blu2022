@@ -14,7 +14,9 @@ uses
   UService.Base in 'model\services\UService.Base.pas',
   UService.Intf in 'model\services\UService.Intf.pas',
   UService.User in 'model\services\UService.User.pas',
-  UUtils.Constants in 'model\utils\UUtils.Constants.pas';
+  UUtils.Constants in 'model\utils\UUtils.Constants.pas',
+  UService.Login in 'model\services\UService.Login.pas',
+  UService.User.Authenticated in 'model\services\UService.User.Authenticated.pas';
 
 {$R *.res}
 

@@ -39,14 +39,13 @@ implementation
 {$R *.fmx}
 
 uses
-  UfrmLogin;
-  {uFrmHome,
-  UEntity.Logins,
-  UEntity.Intf,
-  UEntity.Login; }
+//uFrmHome,
+  UfrmLogin,
+  UService.Intf, UService.Login, UEntity.Logins;
 
 procedure TfrmLoginAuthentication.AbrirHome;
 begin
+  ShowMessage('Usuário Autenticado');
   {if not Assigned(frmHome) then
     frmHome := TfrmHome.Create(Application);
 
@@ -68,10 +67,10 @@ begin
 end;
 
 procedure TfrmLoginAuthentication.Logar;
-//var
-  //xServiceLogin: IService;
+var
+  xServiceLogin: IService;
 begin
-  {if Trim(edtLogin.Text) = EmptyStr then
+  if Trim(edtLogin.Text) = EmptyStr then
     raise Exception.Create('Informe o Login.');
 
   if Trim(edtPassword.text) = EmptyStr then
@@ -85,7 +84,7 @@ begin
     Self.AbrirHome;
   except on E: Exception do
     raise Exception.Create('Login: ' + E.Message);
-  end;}
+  end;
 end;
 
 procedure TfrmLoginAuthentication.VoltarTela;
