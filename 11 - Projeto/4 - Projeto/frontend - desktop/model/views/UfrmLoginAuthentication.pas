@@ -40,19 +40,19 @@ implementation
 {$R *.fmx}
 
 uses
-//uFrmHome,
+  uFrmHome,
   UfrmLogin,
   UService.Intf, UService.Login, UEntity.Logins;
 
 procedure TfrmLoginAuthentication.AbrirHome;
 begin
   ShowMessage('Usuário Autenticado');
-  {if not Assigned(frmHome) then
+  if not Assigned(frmHome) then
     frmHome := TfrmHome.Create(Application);
 
   frmHome.Show;
   Application.MainForm := frmHome;
-  Self.Close;}
+  Self.Close;
 end;
 
 procedure TfrmLoginAuthentication.FormClose(Sender: TObject;
