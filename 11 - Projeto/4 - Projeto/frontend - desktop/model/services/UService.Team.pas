@@ -126,14 +126,50 @@ begin
 end;
 
 function TServiceTeam.ObterRegistro(const aId: Integer): TObject;
+var
+  xMemTable: TFDMemTable;
 begin
+  Result := nil;
 
+  xMemTable := TFDMemTable.Create(nil);
+
+  try
+    FRESTClient.BaseURL := URL_BASE_TEAM + '/' + aId.ToString;
+    FRESTRequest.Method := rmGet;
+    FRESTRequest.Execute;
+
+    if FRESTResponse.StatusCode = API_SUCESSO then
+    begin
+      xMemTable.LoadFromJSON(FRESTResponse.Content);
+
+      if xMemTable.FindFirst then
+        Result := TTeam.Create(xMemTable.FieldByName('id').AsInteger);
+    end;
+  finally
+    FreeAndNil(xMemTable);
+  end;
 end;
 
 procedure TServiceTeam.Registrar;
 begin
-  inherited;
+  try
+    FRESTClient.BaseURL := URL_BASE_TEAM;
+    FRESTRequest.Method := rmPost;
+    FRESTRequest.Params.AddBody(FTeam.JSON);
+    FRESTRequest.Execute;
 
+    case FRESTResponse.StatusCode of
+      API_CRIADO:
+        Exit;
+      API_NAO_AUTORIZADO:
+        raise Exception.Create('Usuário não autorizado.');
+      else
+        raise Exception.Create('Erro não catalogado.');
+    end;
+  except
+    on e: exception do
+      raise Exception.Create(E.Message);
+  end;
 end;
 
 end.
