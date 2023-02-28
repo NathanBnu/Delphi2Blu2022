@@ -286,6 +286,36 @@
         <DCCReference Include="model\utils\UUtils.Enums.pas"/>
         <DCCReference Include="model\services\UService.Team.pas"/>
         <DCCReference Include="model\services\UService.Match.pas"/>
+        <DCCReference Include="model\views\UfraBet.Registry.pas">
+            <Form>fraBetRegistry</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="model\views\UfraMatch.Registry.pas">
+            <Form>fraMatchRegistry</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="model\views\UfraTeam.pas">
+            <Form>fraTeam</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="model\views\UfraTeamRegistry.pas">
+            <Form>fraTeamRegistry</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="model\views\UfraMatch.pas">
+            <Form>fraMatch</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="model\views\UfraBet.pas">
+            <Form>fraBet</Form>
+            <FormType>fmx</FormType>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

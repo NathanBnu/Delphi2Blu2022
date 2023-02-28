@@ -20,7 +20,13 @@ uses
   UfrmHome in 'model\views\UfrmHome.pas' {frmHome},
   UUtils.Enums in 'model\utils\UUtils.Enums.pas',
   UService.Team in 'model\services\UService.Team.pas',
-  UService.Match in 'model\services\UService.Match.pas';
+  UService.Match in 'model\services\UService.Match.pas',
+  UfraBet.Registry in 'model\views\UfraBet.Registry.pas' {fraBetRegistry: TFrame},
+  UfraMatch.Registry in 'model\views\UfraMatch.Registry.pas' {fraMatchRegistry: TFrame},
+  UfraTeam in 'model\views\UfraTeam.pas' {fraTeam: TFrame},
+  UfraTeamRegistry in 'model\views\UfraTeamRegistry.pas' {fraTeamRegistry: TFrame},
+  UfraMatch in 'model\views\UfraMatch.pas' {fraMatch: TFrame},
+  UfraBet in 'model\views\UfraBet.pas' {fraBet: TFrame};
 
 {$R *.res}
 
