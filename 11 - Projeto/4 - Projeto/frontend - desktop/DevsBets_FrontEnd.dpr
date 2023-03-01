@@ -26,7 +26,9 @@ uses
   UfraTeam in 'model\views\UfraTeam.pas' {fraTeam: TFrame},
   UfraTeamRegistry in 'model\views\UfraTeamRegistry.pas' {fraTeamRegistry: TFrame},
   UfraMatch in 'model\views\UfraMatch.pas' {fraMatch: TFrame},
-  UfraBet in 'model\views\UfraBet.pas' {fraBet: TFrame};
+  UfraBet in 'model\views\UfraBet.pas' {fraBet: TFrame},
+  UUtils.Functions in 'model\utils\UUtils.Functions.pas',
+  UService.Bet in 'model\services\UService.Bet.pas';
 
 {$R *.res}
 

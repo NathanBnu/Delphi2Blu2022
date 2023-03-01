@@ -63,7 +63,7 @@ begin
     raise Exception.Create('Nenhum time foi escolhido para exclusão.');
 
   try
-    FRestClient.BaseURL := format(URL_BASE_TEAM + '%d', [FTeam.Id]);
+    FRestClient.BaseURL := format(URL_BASE_TEAM + '/%d', [FTeam.Id]);    //VERIFICAR ERRO DE NÃO EXCLUIR
     FRESTRequest.Method := rmDelete;
     FRESTRequest.execute;
 
